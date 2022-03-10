@@ -30,17 +30,13 @@
     cursor: pointer;
 }
 
-.list-group-item .btn-special-attention {
+.list-group-item .btn-treatment {
     color: #e09f3e;
     transition: 0.4s all;
     opacity: 0.5;
 }
 
-.btn-special-attention:hover {
-    opacity: 1;
-}
-
-.btn-special-attention-active {
+.btn-treatment:hover {
     opacity: 1;
 }
 
@@ -60,7 +56,7 @@
     opacity: 0;
 }
 
-.list-group-item.like .fa-comment-medical {
+.list-group-item.special-attention .fa-comment-medical {
     opacity: 1;
     transform: translateX(0px);
 }

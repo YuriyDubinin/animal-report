@@ -9,14 +9,14 @@ import "./app.css";
 function App() {
     //database emulation
     const data = [
-        { name: "Ляля", type: "Морской лев", specialAttention: false, id: 1 },
-        { name: "Чемал", type: "Белый кит", specialAttention: false, id: 2 },
-        { name: "Сева", type: "Дельфин", specialAttention: true, id: 3 },
-        { name: "Артём", type: "Дельфин", specialAttention: true, id: 4 },
-        { name: "Ая", type: "Белый кит", specialAttention: false, id: 5 },
-        { name: "Тика", type: "Морж", specialAttention: true, id: 6 },
-        { name: "Мэри", type: "Морской лев", specialAttention: false, id: 7 },
-        { name: "Нюша", type: "Дельфин", specialAttention: false, id: 8 },
+        { name: "Ляля", kindOfAnimal: "Морской лев", treatment: false, id: 1 },
+        { name: "Чемал", kindOfAnimal: "Белый кит", treatment: false, id: 2 },
+        { name: "Сева", kindOfAnimal: "Дельфин", treatment: true, id: 3 },
+        { name: "Артём", kindOfAnimal: "Дельфин", treatment: true, id: 4 },
+        { name: "Ая", kindOfAnimal: "Белый кит", treatment: false, id: 5 },
+        { name: "Тика", kindOfAnimal: "Морж", treatment: true, id: 6 },
+        { name: "Мэри", kindOfAnimal: "Морской лев", treatment: false, id: 7 },
+        { name: "Нюша", kindOfAnimal: "Дельфин", treatment: false, id: 8 },
     ];
 
     return (

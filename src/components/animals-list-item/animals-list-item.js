@@ -5,16 +5,10 @@ class AnimalsListItem extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            specialAttention: false,
             treatment: false,
+            specialAttention: false,
         };
     }
-
-    onSpecialAttention = () => {
-        this.setState(({ specialAttention }) => ({
-            specialAttention: !specialAttention,
-        }));
-    };
 
     onTreatment = () => {
         this.setState(({ treatment }) => ({
@@ -22,27 +16,33 @@ class AnimalsListItem extends Component {
         }));
     };
 
+    onSpecialAttention = () => {
+        this.setState(({ specialAttention }) => ({
+            specialAttention: !specialAttention,
+        }));
+    };
+
     render() {
-        const { name, type } = this.props;
-        const { specialAttention, treatment } = this.state;
+        const { name, kindOfAnimal } = this.props;
+        const { treatment, specialAttention } = this.state;
         let classNames = "list-group-item d-flex justify-content-between";
 
-        if (specialAttention) {
+        if (treatment) {
             classNames += " increase";
         }
 
-        if (treatment) {
-            classNames += " like";
+        if (specialAttention) {
+            classNames += " special-attention";
         }
 
         return (
             <li className={classNames}>
-                <span className="list-group-item-label" onClick={this.onTreatment}>
+                <span className="list-group-item-label" onClick={this.onSpecialAttention}>
                     {name}
                 </span>
-                <input type="text" className="list-group-item-input" defaultValue={type} />
+                <input type="text" className="list-group-item-input" defaultValue={kindOfAnimal} />
                 <div className="d-flex justify-content-center align-items-center">
-                    <button type="button" className="btn-special-attention btn-sm " onClick={this.onSpecialAttention}>
+                    <button type="button" className="btn-treatment btn-sm " onClick={this.onTreatment}>
                         <i className="fa-solid fa-suitcase-medical"></i>
                     </button>
                     <button type="button" className="btn-trash btn-sm ">
