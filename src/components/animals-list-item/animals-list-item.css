@@ -30,27 +30,37 @@
     cursor: pointer;
 }
 
-.list-group-item .btn-heal {
+.list-group-item .btn-special-attention {
     color: #e09f3e;
+    transition: 0.4s all;
+    opacity: 0.5;
+}
+
+.btn-special-attention:hover {
+    opacity: 1;
+}
+
+.btn-special-attention-active {
+    opacity: 1;
 }
 
 .list-group-item .btn-trash {
     color: #e5383b;
 }
 
-.list-group-item .fa-star {
+.list-group-item .fa-comment-medical {
     width: 35px;
     height: 35px;
     text-align: center;
     line-height: 35px;
     font-size: 16px;
-    color: #ffd700;
+    color: #19b723;
     transition: 0.3s all;
     transform: translateX(30px);
     opacity: 0;
 }
 
-.list-group-item.like .fa-star {
+.list-group-item.like .fa-comment-medical {
     opacity: 1;
     transform: translateX(0px);
 }

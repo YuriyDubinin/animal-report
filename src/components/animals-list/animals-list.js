@@ -4,7 +4,9 @@ import "./animals-list.css";
 
 const AnimalsList = ({ data }) => {
     const elements = data.map((item) => {
-        return <AnimalsListItem {...item} />;
+        const { id, ...itemProps } = item;
+
+        return <AnimalsListItem key={id} {...itemProps} />;
     });
     return <ul className="app-list list-group">{elements}</ul>;
 };

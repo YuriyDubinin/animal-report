@@ -1,27 +1,58 @@
+import { Component } from "react";
 import "./animals-list-item.css";
 
-const AnimalsListItem = ({ name, type, specialAttention }) => {
-    let classNames = "list-group-item d-flex justify-content-between";
-
-    if (specialAttention) {
-        classNames += " increase";
+class AnimalsListItem extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            specialAttention: false,
+            treatment: false,
+        };
     }
 
-    return (
-        <li className={classNames}>
-            <span className="list-group-item-label">{name}</span>
-            <input type="text" className="list-group-item-input" defaultValue="Животное" value={type} />
-            <div className="d-flex justify-content-center align-items-center">
-                <button type="button" className="btn-heal btn-sm ">
-                    <i className="fa-solid fa-suitcase-medical"></i>
-                </button>
-                <button type="button" className="btn-trash btn-sm ">
-                    <i className="fas fa-trash"></i>
-                </button>
-                <i className="fas fa-star"></i>
-            </div>
-        </li>
-    );
-};
+    onSpecialAttention = () => {
+        this.setState(({ specialAttention }) => ({
+            specialAttention: !specialAttention,
+        }));
+    };
+
+    onTreatment = () => {
+        this.setState(({ treatment }) => ({
+            treatment: !treatment,
+        }));
+    };
+
+    render() {
+        const { name, type } = this.props;
+        const { specialAttention, treatment } = this.state;
+        let classNames = "list-group-item d-flex justify-content-between";
+
+        if (specialAttention) {
+            classNames += " increase";
+        }
+
+        if (treatment) {
+            classNames += " like";
+        }
+
+        return (
+            <li className={classNames}>
+                <span className="list-group-item-label" onClick={this.onTreatment}>
+                    {name}
+                </span>
+                <input type="text" className="list-group-item-input" defaultValue={type} />
+                <div className="d-flex justify-content-center align-items-center">
+                    <button type="button" className="btn-special-attention btn-sm " onClick={this.onSpecialAttention}>
+                        <i className="fa-solid fa-suitcase-medical"></i>
+                    </button>
+                    <button type="button" className="btn-trash btn-sm ">
+                        <i className="fas fa-trash"></i>
+                    </button>
+                    <i className="fa-solid fa-comment-medical"></i>
+                </div>
+            </li>
+        );
+    }
+}
 
 export default AnimalsListItem;
