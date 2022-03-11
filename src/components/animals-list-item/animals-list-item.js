@@ -37,18 +37,35 @@ class AnimalsListItem extends Component {
 
         return (
             <li className={classNames}>
-                <span className="list-group-item-label" onClick={this.onSpecialAttention}>
-                    {name}
-                </span>
-                <input type="text" className="list-group-item-input" defaultValue={kindOfAnimal} />
+                <div className="d-flex justify-content-center align-items-center">
+                    <span className="list-group-item-label" title="Имя животного">
+                        {name}
+                    </span>
+                    <button type="button" className="btn-raport btn-sm " title="Отчёт">
+                        <i className="fa-solid fa-book"></i>
+                    </button>
+                </div>
+
+                <div className="d-flex justify-content-center align-items-center">
+                    <span className="list-group-item-label" title="Тип животного">
+                        {kindOfAnimal}
+                    </span>
+                    <button
+                        type="button"
+                        className="btn-set-attention btn-sm "
+                        onClick={this.onSpecialAttention}
+                        title="Установить дополнительное наблюдение"
+                    >
+                        <i className="fa-solid fa-eye"></i>
+                    </button>
+                </div>
+
                 <div className="d-flex justify-content-center align-items-center">
                     <button type="button" className="btn-treatment btn-sm " onClick={this.onTreatment}>
-                        <i className="fa-solid fa-suitcase-medical"></i>
+                        <i className="fa-solid fa-suitcase-medical" title="Индикатор лечения"></i>
                     </button>
-                    <button type="button" className="btn-trash btn-sm ">
-                        <i className="fas fa-trash"></i>
-                    </button>
-                    <i className="fa-solid fa-comment-medical"></i>
+
+                    <i className="fa-solid fa-comment-medical" title="Дополнительное наблюдение"></i>
                 </div>
             </li>
         );
