@@ -22,7 +22,21 @@ class AnimalsAddForm extends Component {
     onSubmit = (event) => {
         event.preventDefault();
 
-        this.props.onAdd(this.state.name, this.state.kindOfAnimal);
+        const animalName = this.state.name,
+            kindOfAnimal = this.state.kindOfAnimal;
+
+        const message = {
+            success: `${kindOfAnimal} по кличке '${animalName}' добавлен(а) в список`,
+            failure: `${kindOfAnimal} по кличке '${animalName}' уже существует в списке, выберите другое имя или вид животного`,
+        };
+
+        //A construct that checks if there is an existing animal in the list, if so, the animal is not added
+        if (this.props.onCheck(animalName, kindOfAnimal)) {
+            console.log(message.failure);
+        } else {
+            this.props.onAdd(animalName, kindOfAnimal);
+            console.log(message.success);
+        }
 
         //clearing form after adding
         this.setState(() => ({

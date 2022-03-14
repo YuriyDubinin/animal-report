@@ -78,7 +78,7 @@ class App extends Component {
                 </div>
 
                 <AnimalsList data={this.state.data} />
-                <AnimalsAddForm onAdd={this.addItem} />
+                <AnimalsAddForm onAdd={this.addItem} onCheck={this.checkAvailability} />
                 <AnimalsDeleteForm onDelete={this.deleteItem} onCheck={this.checkAvailability} />
             </div>
         );

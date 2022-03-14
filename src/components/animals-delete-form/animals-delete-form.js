@@ -38,6 +38,7 @@ class AnimalsDeleteForm extends Component {
             console.log(message.failure);
         }
 
+        //clearing form after adding
         this.setState({
             name: "",
             kindOfAnimal: "",
