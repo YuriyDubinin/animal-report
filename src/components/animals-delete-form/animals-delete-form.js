@@ -18,11 +18,25 @@ class AnimalsDeleteForm extends Component {
         });
     };
 
-    //remove animal from the list
+    //submitting form data
     onSubmit = (event) => {
         event.preventDefault();
 
-        this.props.onDelete(this.state.name, this.state.kindOfAnimal);
+        const animalName = this.state.name,
+            kindOfAnimal = this.state.kindOfAnimal;
+
+        const message = {
+            success: `${kindOfAnimal} по кличке '${animalName}' удален(а) из списка`,
+            failure: `${kindOfAnimal} по кличке '${animalName}' не найден(а) в списке`,
+        };
+
+        //construction that removes item from the list if it exists
+        if (this.props.onCheck(animalName, kindOfAnimal)) {
+            this.props.onDelete(animalName, kindOfAnimal);
+            console.log(message.success);
+        } else {
+            console.log(message.failure);
+        }
 
         this.setState({
             name: "",

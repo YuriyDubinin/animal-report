@@ -42,7 +42,7 @@ class App extends Component {
         }));
     };
 
-    //removes animal from the list if it exists, no protecting of invalid input
+    //removes animal from the list
     deleteItem = (name, kindOfAnimal) => {
         this.state.data.forEach((item) => {
             if (item.name === name && item.kindOfAnimal === kindOfAnimal) {
@@ -51,6 +51,20 @@ class App extends Component {
                 }));
             }
         });
+    };
+
+    //check if an animal is on the list, returns true or false
+    checkAvailability = (name, kindOfAnimal) => {
+        //construction that checks for the presence of the desired object in the array
+        const itemExists = this.state.data.find(
+            (animal) => animal.name === name && animal.kindOfAnimal === kindOfAnimal
+        );
+
+        if (itemExists) {
+            return true;
+        } else {
+            return false;
+        }
     };
 
     render() {
@@ -65,7 +79,7 @@ class App extends Component {
 
                 <AnimalsList data={this.state.data} />
                 <AnimalsAddForm onAdd={this.addItem} />
-                <AnimalsDeleteForm onDelete={this.deleteItem} />
+                <AnimalsDeleteForm onDelete={this.deleteItem} onCheck={this.checkAvailability} />
             </div>
         );
     }
