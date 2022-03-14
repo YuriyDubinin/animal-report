@@ -5,6 +5,7 @@ import SearchPanel from "../search-panel/search-panel";
 import AppFilter from "../app-filter/app-filter";
 import AnimalsList from "../animals-list/animals-list";
 import AnimalsAddForm from "../animals-add-form/animals-add-form";
+import AnimalsDeleteForm from "../animals-delete-form/animals-delete-form";
 
 import "./app.css";
 
@@ -27,7 +28,7 @@ class App extends Component {
         this.maxId = 9;
     }
 
-    //adds animals to the list
+    //adds animals to the list, no protecting against invalid input
     addItem = (name, kindOfAnimal) => {
         const newItem = {
             name: name,
@@ -39,6 +40,17 @@ class App extends Component {
         this.setState(({ data }) => ({
             data: [...data, newItem],
         }));
+    };
+
+    //removes animal from the list if it exists, no protecting of invalid input
+    deleteItem = (name, kindOfAnimal) => {
+        this.state.data.forEach((item) => {
+            if (item.name === name && item.kindOfAnimal === kindOfAnimal) {
+                this.setState(({ data }) => ({
+                    data: data.filter((elem) => elem.name !== name),
+                }));
+            }
+        });
     };
 
     render() {
@@ -53,6 +65,7 @@ class App extends Component {
 
                 <AnimalsList data={this.state.data} />
                 <AnimalsAddForm onAdd={this.addItem} />
+                <AnimalsDeleteForm onDelete={this.deleteItem} />
             </div>
         );
     }
