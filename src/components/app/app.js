@@ -6,6 +6,7 @@ import AppFilter from "../app-filter/app-filter";
 import AnimalsList from "../animals-list/animals-list";
 import AnimalsAddForm from "../animals-add-form/animals-add-form";
 import AnimalsDeleteForm from "../animals-delete-form/animals-delete-form";
+import Modal from "../modal/modal";
 
 import "./app.css";
 
@@ -24,6 +25,10 @@ class App extends Component {
                 { name: "Мэри", kindOfAnimal: "Морской лев", treatment: false, id: 7 },
                 { name: "Нюша", kindOfAnimal: "Дельфин", treatment: false, id: 8 },
             ],
+
+            //modal
+            modalActive: false,
+            modalMessage: "",
         };
         this.maxId = 9;
     }
@@ -67,6 +72,13 @@ class App extends Component {
         }
     };
 
+    //modal
+    setModalActive = (bool) => {
+        this.setState({
+            modalActive: bool,
+        });
+    };
+
     render() {
         return (
             <div className="app">
@@ -78,8 +90,17 @@ class App extends Component {
                 </div>
 
                 <AnimalsList data={this.state.data} />
-                <AnimalsAddForm onAdd={this.addItem} onCheck={this.checkAvailability} />
-                <AnimalsDeleteForm onDelete={this.deleteItem} onCheck={this.checkAvailability} />
+                <AnimalsAddForm
+                    onAdd={this.addItem}
+                    onCheck={this.checkAvailability}
+                    onModalActive={this.setModalActive}
+                />
+                <AnimalsDeleteForm
+                    onDelete={this.deleteItem}
+                    onCheck={this.checkAvailability}
+                    onModalActive={this.setModalActive}
+                />
+                <Modal active={this.state.modalActive} onModalActive={this.setModalActive} />
             </div>
         );
     }

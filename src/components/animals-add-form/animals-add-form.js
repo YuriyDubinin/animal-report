@@ -22,20 +22,26 @@ class AnimalsAddForm extends Component {
     onSubmit = (event) => {
         event.preventDefault();
 
-        const animalName = this.state.name,
-            kindOfAnimal = this.state.kindOfAnimal;
+        const { name, kindOfAnimal } = this.state,
+            { onCheck, onAdd, onModalActive } = this.props;
 
         const message = {
-            success: `${kindOfAnimal} по кличке '${animalName}' добавлен(а) в список`,
-            failure: `${kindOfAnimal} по кличке '${animalName}' уже существует в списке, выберите другое имя или вид животного`,
+            success: `${kindOfAnimal} по кличке '${name}' добавлен(а) в список`,
+            failure: `${kindOfAnimal} по кличке '${name}' уже существует в списке, выберите другое имя или вид животного`,
         };
 
         //A construct that checks if there is an existing animal in the list, if so, the animal is not added
-        if (this.props.onCheck(animalName, kindOfAnimal)) {
+        if (onCheck(name, kindOfAnimal)) {
             console.log(message.failure);
+
+            //open modal window
+            onModalActive(true);
         } else {
-            this.props.onAdd(animalName, kindOfAnimal);
+            onAdd(name, kindOfAnimal);
             console.log(message.success);
+
+            //open modal window
+            onModalActive(true);
         }
 
         //clearing form after adding

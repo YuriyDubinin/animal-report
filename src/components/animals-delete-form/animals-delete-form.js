@@ -22,20 +22,27 @@ class AnimalsDeleteForm extends Component {
     onSubmit = (event) => {
         event.preventDefault();
 
-        const animalName = this.state.name,
-            kindOfAnimal = this.state.kindOfAnimal;
+        const { onModalActive, onCheck, onDelete } = this.props,
+            { name, kindOfAnimal } = this.state;
 
         const message = {
-            success: `${kindOfAnimal} по кличке '${animalName}' удален(а) из списка`,
-            failure: `${kindOfAnimal} по кличке '${animalName}' не найден(а) в списке`,
+            success: `${kindOfAnimal} по кличке '${name}' удален(а) из списка`,
+            failure: `${kindOfAnimal} по кличке '${name}' не найден(а) в списке`,
         };
 
         //construction that removes item from the list if it exists
-        if (this.props.onCheck(animalName, kindOfAnimal)) {
-            this.props.onDelete(animalName, kindOfAnimal);
+        if (onCheck(name, kindOfAnimal)) {
+            onDelete(name, kindOfAnimal);
+
             console.log(message.success);
+
+            //open modal swindow
+            onModalActive(true);
         } else {
             console.log(message.failure);
+
+            //open modal swindow
+            onModalActive(true);
         }
 
         //clearing form after adding
