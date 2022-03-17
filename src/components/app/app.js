@@ -93,9 +93,16 @@ class App extends Component {
     };
 
     render() {
+        const totalAnimals = this.state.data.length,
+            animalsOnTreatment = this.state.data.filter((item) => item.treatment).length,
+            animalsOnSpecialAttention = this.state.data.filter((item) => item.specialAttention).length;
         return (
             <div className="app">
-                <AppInfo />
+                <AppInfo
+                    totalAnimals={totalAnimals}
+                    animalsOnTreatment={animalsOnTreatment}
+                    animalsOnSpecialAttention={animalsOnSpecialAttention}
+                />
 
                 <div className="search-panel">
                     <SearchPanel />
