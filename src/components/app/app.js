@@ -16,14 +16,14 @@ class App extends Component {
         this.state = {
             //database emulation
             data: [
-                { name: "Ляля", kindOfAnimal: "Морской лев", treatment: false, id: 1 },
-                { name: "Чемал", kindOfAnimal: "Белый кит", treatment: false, id: 2 },
-                { name: "Сева", kindOfAnimal: "Дельфин", treatment: true, id: 3 },
-                { name: "Артём", kindOfAnimal: "Дельфин", treatment: true, id: 4 },
-                { name: "Ая", kindOfAnimal: "Белый кит", treatment: false, id: 5 },
-                { name: "Тика", kindOfAnimal: "Морж", treatment: true, id: 6 },
-                { name: "Мэри", kindOfAnimal: "Морской лев", treatment: false, id: 7 },
-                { name: "Нюша", kindOfAnimal: "Дельфин", treatment: false, id: 8 },
+                { name: "Ляля", kindOfAnimal: "Морской лев", treatment: false, specialAttention: false, id: 1 },
+                { name: "Чемал", kindOfAnimal: "Белый кит", treatment: false, specialAttention: false, id: 2 },
+                { name: "Сева", kindOfAnimal: "Дельфин", treatment: false, specialAttention: false, id: 3 },
+                { name: "Артём", kindOfAnimal: "Дельфин", treatment: false, specialAttention: false, id: 4 },
+                { name: "Ая", kindOfAnimal: "Белый кит", treatment: false, specialAttention: false, id: 5 },
+                { name: "Тика", kindOfAnimal: "Морж", treatment: false, specialAttention: false, id: 6 },
+                { name: "Мэри", kindOfAnimal: "Морской лев", treatment: false, specialAttention: false, id: 7 },
+                { name: "Нюша", kindOfAnimal: "Дельфин", treatment: false, specialAttention: false, id: 8 },
             ],
 
             //modal
@@ -39,6 +39,7 @@ class App extends Component {
             name: name,
             kindOfAnimal: kindOfAnimal,
             treatment: false,
+            specialAttention: false,
             id: this.maxId++,
         };
 
@@ -72,6 +73,18 @@ class App extends Component {
         }
     };
 
+    //reverse prop value
+    onToggleProp = (id, prop) => {
+        this.setState(({ data }) => ({
+            data: data.map((item) => {
+                if (item.id === id) {
+                    return { ...item, [prop]: !item[prop] };
+                }
+                return item;
+            }),
+        }));
+    };
+
     //modal
     setModalActive = (bool) => {
         this.setState({
@@ -89,7 +102,7 @@ class App extends Component {
                     <AppFilter />
                 </div>
 
-                <AnimalsList data={this.state.data} />
+                <AnimalsList data={this.state.data} onToggleProp={this.onToggleProp} />
                 <AnimalsAddForm
                     onAdd={this.addItem}
                     onCheck={this.checkAvailability}
