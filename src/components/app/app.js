@@ -24,13 +24,25 @@ class App extends Component {
                 { name: "Тика", kindOfAnimal: "Морж", treatment: false, specialAttention: false, id: 6 },
                 { name: "Мэри", kindOfAnimal: "Морской лев", treatment: false, specialAttention: false, id: 7 },
                 { name: "Нюша", kindOfAnimal: "Дельфин", treatment: false, specialAttention: false, id: 8 },
+                { name: "Миша", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 9 },
+                { name: "Марина", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 10 },
+                { name: "Боб", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 11 },
+                { name: "Жора", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 12 },
+                { name: "Грызя", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 13 },
+                { name: "Кнопа", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 14 },
+                { name: "Умка", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 15 },
+                { name: "Пух", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 16 },
+                { name: "Кекс", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 17 },
             ],
+
+            //search by name
+            term: "",
 
             //modal
             modalActive: false,
             modalMessage: "",
         };
-        this.maxId = 9;
+        this.maxId = 18;
     }
 
     //adds animals to the list, no protecting against invalid input
@@ -85,6 +97,21 @@ class App extends Component {
         }));
     };
 
+    //searches for animals by spelling in name
+    searchAnimals = (items, term) => {
+        if (term.length === 0) {
+            return items;
+        }
+
+        return items.filter((item) => {
+            return item.name.indexOf(term) > -1;
+        });
+    };
+
+    onUpdateSearch = (term) => {
+        this.setState({ term });
+    };
+
     //modal
     setModalActive = (bool) => {
         this.setState({
@@ -93,9 +120,13 @@ class App extends Component {
     };
 
     render() {
-        const totalAnimals = this.state.data.length,
-            animalsOnTreatment = this.state.data.filter((item) => item.treatment).length,
-            animalsOnSpecialAttention = this.state.data.filter((item) => item.specialAttention).length;
+        const { data, term } = this.state;
+
+        const totalAnimals = data.length,
+            animalsOnTreatment = data.filter((item) => item.treatment).length,
+            animalsOnSpecialAttention = data.filter((item) => item.specialAttention).length;
+
+        const visibleData = this.searchAnimals(data, term);
         return (
             <div className="app">
                 <AppInfo
@@ -105,11 +136,11 @@ class App extends Component {
                 />
 
                 <div className="search-panel">
-                    <SearchPanel />
+                    <SearchPanel onUpdateSearch={this.onUpdateSearch} />
                     <AppFilter />
                 </div>
 
-                <AnimalsList data={this.state.data} onToggleProp={this.onToggleProp} />
+                <AnimalsList data={visibleData} onToggleProp={this.onToggleProp} />
                 <AnimalsAddForm
                     onAdd={this.addItem}
                     onCheck={this.checkAvailability}
