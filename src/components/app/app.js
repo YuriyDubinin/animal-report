@@ -38,6 +38,9 @@ class App extends Component {
             //search by name
             term: "",
 
+            //filter
+            filterMode: "Все",
+
             //modal
             modalActive: false,
             modalMessage: "",
@@ -112,6 +115,40 @@ class App extends Component {
         this.setState({ term });
     };
 
+    //filters the list of animals
+    filterAnimals = (items, filterMode) => {
+        //filter by special attention
+        if (filterMode === "Доп.наблюдение") {
+            return items.filter((item) => item.specialAttention);
+        }
+
+        //filter by treatment
+        if (filterMode === "На лечении") {
+            return items.filter((item) => item.treatment);
+        }
+
+        //filter by kind
+        switch (filterMode) {
+            case "Белый кит":
+                return items.filter((item) => item.kindOfAnimal == "Белый кит");
+            case "Дельфин":
+                return items.filter((item) => item.kindOfAnimal === "Дельфин");
+            case "Морж":
+                return items.filter((item) => item.kindOfAnimal === "Морж");
+            case "Морской лев":
+                return items.filter((item) => item.kindOfAnimal === "Морской лев");
+            case "Нерпа":
+                return items.filter((item) => item.kindOfAnimal === "Нерпа");
+            default:
+                return items;
+        }
+    };
+
+    //udates this.filterMode
+    onUpdateFilter = (value) => {
+        this.setState({ filterMode: value });
+    };
+
     //modal
     setModalActive = (bool) => {
         this.setState({
@@ -120,13 +157,13 @@ class App extends Component {
     };
 
     render() {
-        const { data, term } = this.state;
+        const { data, term, filterMode } = this.state;
 
         const totalAnimals = data.length,
             animalsOnTreatment = data.filter((item) => item.treatment).length,
             animalsOnSpecialAttention = data.filter((item) => item.specialAttention).length;
 
-        const visibleData = this.searchAnimals(data, term);
+        const visibleData = this.filterAnimals(this.searchAnimals(data, term), filterMode);
         return (
             <div className="app">
                 <AppInfo
@@ -137,7 +174,7 @@ class App extends Component {
 
                 <div className="search-panel">
                     <SearchPanel onUpdateSearch={this.onUpdateSearch} />
-                    <AppFilter />
+                    <AppFilter filterMode={filterMode} onUpdateFilter={this.onUpdateFilter} />
                 </div>
 
                 <AnimalsList data={visibleData} onToggleProp={this.onToggleProp} />
