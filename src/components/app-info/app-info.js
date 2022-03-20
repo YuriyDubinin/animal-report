@@ -4,9 +4,13 @@ const AppInfo = ({ totalAnimals, animalsOnSpecialAttention, animalsOnTreatment }
     return (
         <div className="app-info">
             <h1>Учет животных в компании</h1>
-            <h2>Общее число животных: {totalAnimals}</h2>
-            <h2>Под доп.наблюдением: {animalsOnSpecialAttention}</h2>
-            <h2>На лечении: {animalsOnTreatment}</h2>
+            <h3>Общее число животных: {totalAnimals}</h3>
+            <h3>
+                Под доп.наблюдением: <span>{animalsOnSpecialAttention}</span>
+            </h3>
+            <h2>
+                На лечении: <span>{animalsOnTreatment}</span>
+            </h2>
         </div>
     );
 };
