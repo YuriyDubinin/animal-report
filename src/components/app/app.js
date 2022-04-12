@@ -1,4 +1,4 @@
-import { Component } from "react";
+import { useState } from "react";
 
 import AppInfo from "../app-info/app-info";
 import SearchPanel from "../search-panel/search-panel";
@@ -10,76 +10,59 @@ import Modal from "../modal/modal";
 
 import "./app.css";
 
-class App extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            //database emulation
-            data: [
-                { name: "Ляля", kindOfAnimal: "Морской лев", treatment: false, specialAttention: false, id: 1 },
-                { name: "Чемал", kindOfAnimal: "Белый кит", treatment: false, specialAttention: false, id: 2 },
-                { name: "Сева", kindOfAnimal: "Дельфин", treatment: false, specialAttention: false, id: 3 },
-                { name: "Артём", kindOfAnimal: "Дельфин", treatment: false, specialAttention: false, id: 4 },
-                { name: "Ая", kindOfAnimal: "Белый кит", treatment: false, specialAttention: false, id: 5 },
-                { name: "Тика", kindOfAnimal: "Морж", treatment: false, specialAttention: false, id: 6 },
-                { name: "Мэри", kindOfAnimal: "Морской лев", treatment: false, specialAttention: false, id: 7 },
-                { name: "Нюша", kindOfAnimal: "Дельфин", treatment: false, specialAttention: false, id: 8 },
-                { name: "Миша", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 9 },
-                { name: "Марина", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 10 },
-                { name: "Боб", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 11 },
-                { name: "Жора", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 12 },
-                { name: "Грызя", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 13 },
-                { name: "Кнопа", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 14 },
-                { name: "Умка", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 15 },
-                { name: "Пух", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 16 },
-                { name: "Кекс", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 17 },
-            ],
+const App = () => {
+    const [data, setData] = useState([
+            { name: "Ляля", kindOfAnimal: "Морской лев", treatment: false, specialAttention: false, id: 1 },
+            { name: "Чемал", kindOfAnimal: "Белый кит", treatment: false, specialAttention: false, id: 2 },
+            { name: "Сева", kindOfAnimal: "Дельфин", treatment: false, specialAttention: false, id: 3 },
+            { name: "Артём", kindOfAnimal: "Дельфин", treatment: false, specialAttention: false, id: 4 },
+            { name: "Ая", kindOfAnimal: "Белый кит", treatment: false, specialAttention: false, id: 5 },
+            { name: "Тика", kindOfAnimal: "Морж", treatment: false, specialAttention: false, id: 6 },
+            { name: "Мэри", kindOfAnimal: "Морской лев", treatment: false, specialAttention: false, id: 7 },
+            { name: "Нюша", kindOfAnimal: "Дельфин", treatment: false, specialAttention: false, id: 8 },
+            { name: "Миша", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 9 },
+            { name: "Марина", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 10 },
+            { name: "Боб", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 11 },
+            { name: "Жора", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 12 },
+            { name: "Грызя", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 13 },
+            { name: "Кнопа", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 14 },
+            { name: "Умка", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 15 },
+            { name: "Пух", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 16 },
+            { name: "Кекс", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 17 },
+        ]),
+        [term, setTerm] = useState(""),
+        [filterMode, setFilterMode] = useState("Все"),
+        [modalActive, setModalActive] = useState(false);
 
-            //search by name
-            term: "",
-
-            //filter
-            filterMode: "Все",
-
-            //modal
-            modalActive: false,
-            modalMessage: "",
-        };
-        this.maxId = 18;
-    }
+    //id for creating animals list item
+    let maxId = 18;
 
     //adds animals to the list, no protecting against invalid input
-    addItem = (name, kindOfAnimal) => {
+    const addItem = (name, kindOfAnimal) => {
         const newItem = {
             name: name,
             kindOfAnimal: kindOfAnimal,
             treatment: false,
             specialAttention: false,
-            id: this.maxId++,
+            id: maxId++,
         };
 
-        this.setState(({ data }) => ({
-            data: [...data, newItem],
-        }));
+        setData([...data, newItem]);
     };
 
     //removes animal from the list
-    deleteItem = (name, kindOfAnimal) => {
-        this.state.data.forEach((item) => {
+    const deleteItem = (name, kindOfAnimal) => {
+        data.forEach((item) => {
             if (item.name === name && item.kindOfAnimal === kindOfAnimal) {
-                this.setState(({ data }) => ({
-                    data: data.filter((elem) => elem.name !== name),
-                }));
+                setData(data.filter((elem) => elem.name !== name));
             }
         });
     };
 
     //check if an animal is on the list, returns true or false
-    checkAvailability = (name, kindOfAnimal) => {
+    const checkAvailability = (name, kindOfAnimal) => {
         //construction that checks for the presence of the desired object in the array
-        const itemExists = this.state.data.find(
-            (animal) => animal.name === name && animal.kindOfAnimal === kindOfAnimal
-        );
+        const itemExists = data.find((animal) => animal.name === name && animal.kindOfAnimal === kindOfAnimal);
 
         if (itemExists) {
             return true;
@@ -89,19 +72,19 @@ class App extends Component {
     };
 
     //reverse prop value
-    onToggleProp = (id, prop) => {
-        this.setState(({ data }) => ({
-            data: data.map((item) => {
+    const onToggleProp = (id, prop) => {
+        setData(
+            data.map((item) => {
                 if (item.id === id) {
                     return { ...item, [prop]: !item[prop] };
                 }
                 return item;
-            }),
-        }));
+            })
+        );
     };
 
     //searches for animals by spelling in name
-    searchAnimals = (items, term) => {
+    const searchAnimals = (items, term) => {
         if (term.length === 0) {
             return items;
         }
@@ -111,12 +94,12 @@ class App extends Component {
         });
     };
 
-    onUpdateSearch = (term) => {
-        this.setState({ term });
+    const onUpdateSearch = (term) => {
+        setTerm(term);
     };
 
     //filters the list of animals
-    filterAnimals = (items, filterMode) => {
+    const filterAnimals = (items, filterMode) => {
         //filter by special attention
         if (filterMode === "Доп.наблюдение") {
             return items.filter((item) => item.specialAttention);
@@ -130,7 +113,7 @@ class App extends Component {
         //filter by kind
         switch (filterMode) {
             case "Белый кит":
-                return items.filter((item) => item.kindOfAnimal == "Белый кит");
+                return items.filter((item) => item.kindOfAnimal === "Белый кит");
             case "Дельфин":
                 return items.filter((item) => item.kindOfAnimal === "Дельфин");
             case "Морж":
@@ -145,53 +128,40 @@ class App extends Component {
     };
 
     //udates this.filterMode
-    onUpdateFilter = (value) => {
-        this.setState({ filterMode: value });
+    const onUpdateFilter = (value) => {
+        setFilterMode(value);
     };
 
     //modal
-    setModalActive = (bool) => {
-        this.setState({
-            modalActive: bool,
-        });
+    const onModalActive = (bool) => {
+        setModalActive(bool);
     };
 
-    render() {
-        const { data, term, filterMode } = this.state;
+    const totalAnimals = data.length,
+        animalsOnTreatment = data.filter((item) => item.treatment).length,
+        animalsOnSpecialAttention = data.filter((item) => item.specialAttention).length;
 
-        const totalAnimals = data.length,
-            animalsOnTreatment = data.filter((item) => item.treatment).length,
-            animalsOnSpecialAttention = data.filter((item) => item.specialAttention).length;
+    //data displayed in the main list
+    const visibleData = filterAnimals(searchAnimals(data, term), filterMode);
+    return (
+        <div className="app">
+            <AppInfo
+                totalAnimals={totalAnimals}
+                animalsOnTreatment={animalsOnTreatment}
+                animalsOnSpecialAttention={animalsOnSpecialAttention}
+            />
 
-        const visibleData = this.filterAnimals(this.searchAnimals(data, term), filterMode);
-        return (
-            <div className="app">
-                <AppInfo
-                    totalAnimals={totalAnimals}
-                    animalsOnTreatment={animalsOnTreatment}
-                    animalsOnSpecialAttention={animalsOnSpecialAttention}
-                />
-
-                <div className="search-panel">
-                    <SearchPanel onUpdateSearch={this.onUpdateSearch} />
-                    <AppFilter filterMode={filterMode} onUpdateFilter={this.onUpdateFilter} />
-                </div>
-
-                <AnimalsList data={visibleData} onToggleProp={this.onToggleProp} />
-                <AnimalsAddForm
-                    onAdd={this.addItem}
-                    onCheck={this.checkAvailability}
-                    onModalActive={this.setModalActive}
-                />
-                <AnimalsDeleteForm
-                    onDelete={this.deleteItem}
-                    onCheck={this.checkAvailability}
-                    onModalActive={this.setModalActive}
-                />
-                <Modal active={this.state.modalActive} onModalActive={this.setModalActive} />
+            <div className="search-panel">
+                <SearchPanel onUpdateSearch={onUpdateSearch} />
+                <AppFilter filterMode={filterMode} onUpdateFilter={onUpdateFilter} />
             </div>
-        );
-    }
-}
+
+            <AnimalsList data={visibleData} onToggleProp={onToggleProp} />
+            <AnimalsAddForm onAdd={addItem} onCheck={checkAvailability} onModalActive={setModalActive} />
+            <AnimalsDeleteForm onDelete={deleteItem} onCheck={checkAvailability} onModalActive={setModalActive} />
+            <Modal active={modalActive} onModalActive={onModalActive} />
+        </div>
+    );
+};
 
 export default App;
