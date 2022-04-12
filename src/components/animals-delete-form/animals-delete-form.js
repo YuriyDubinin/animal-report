@@ -58,10 +58,10 @@ class AnimalsDeleteForm extends Component {
         return (
             <div className="app-add-form">
                 <h3>Удалить</h3>
-                <form className="add-form d-flex" onSubmit={this.onSubmit}>
+                <form className="add-form" onSubmit={this.onSubmit}>
                     <input
                         type="text"
-                        className="form-control new-post-label"
+                        className=""
                         placeholder="Имя"
                         name="name"
                         value={name}
@@ -69,14 +69,14 @@ class AnimalsDeleteForm extends Component {
                     />
                     <input
                         type="text"
-                        className="form-control new-post-label"
+                        className=""
                         placeholder="Вид"
                         name="kindOfAnimal"
                         value={kindOfAnimal}
                         onChange={this.onValueChange}
                     />
 
-                    <button type="submit" className="btn btn-outline-light">
+                    <button type="submit" className="btn-default">
                         Удалить
                     </button>
                 </form>

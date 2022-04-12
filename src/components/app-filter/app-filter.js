@@ -18,10 +18,15 @@ const AppFilter = (props) => {
         //checking where the filter matches
         const active = filterMode === name;
 
-        const classNames = active ? "btn-light" : "btn-outline-light";
+        const classNames = active ? "btn-default-light" : null;
 
         return (
-            <button type="button" className={`btn ${classNames}`} key={name} onClick={() => onUpdateFilter(name)}>
+            <button
+                type="button"
+                className={`btn-default ${classNames}`}
+                key={name}
+                onClick={() => onUpdateFilter(name)}
+            >
                 {label}
             </button>
         );

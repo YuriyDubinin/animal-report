@@ -16,7 +16,7 @@ const AnimalsList = ({ data, onToggleProp }) => {
             />
         );
     });
-    return <ul className="app-list list-group">{elements}</ul>;
+    return <ul className="animals-list">{elements}</ul>;
 };
 
 export default AnimalsList;

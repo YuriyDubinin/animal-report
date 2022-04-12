@@ -1,15 +1,19 @@
-.list-group-item {
+.animals-list-item {
+    margin-top: 3px;
     padding: 15px 20px;
-    border-bottom: 1px solid #3d5a80;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
+    border-radius: 4px;
 }
 
-.list-group-item:last-child {
+.animals-list-item:last-child {
     border-bottom: none;
 }
 
-.list-group-item .btn-raport {
+.animals-list-item .btn-raport {
     color: #6b2a1f;
-    transition: 0.4s all;
+    transition: 0.3s all;
     opacity: 0.5;
 }
 
@@ -17,26 +21,29 @@
     opacity: 1;
 }
 
-.list-group-item span {
+.animals-list-item span {
     line-height: 35px;
     font-size: 20px;
     cursor: pointer;
 }
 
-.list-group-item input {
+.animals-list-item input {
     line-height: 35px;
     font-size: 20px;
     text-align: center;
     border: 0;
 }
 
-.list-group-item .btn-set-attention {
+.animals-list-item .btn-set-attention {
     color: #d89bd0;
-    transition: 0.4s all;
+    transition: 0.3s all;
     opacity: 0.7;
 }
+.btn-set-attention:hover {
+    opacity: 1;
+}
 
-.list-group-item button {
+.animals-list-item button {
     width: 35px;
     height: 35px;
     margin: 3px;
@@ -44,22 +51,15 @@
     border: none;
     cursor: pointer;
 }
-
-.list-group-item .btn-treatment {
+.animals-list-item .btn-treatment {
     color: #e09f3e;
-    transition: 0.4s all;
+    transition: 0.3s all;
     opacity: 0.5;
 }
-
 .btn-treatment:hover {
     opacity: 1;
 }
-
-.list-group-item .btn-trash {
-    color: #e5383b;
-}
-
-.list-group-item .fa-comment-medical {
+.animals-list-item .fa-comment-medical {
     width: 35px;
     height: 35px;
     text-align: center;
@@ -69,18 +69,19 @@
     transition: 0.3s all;
     transform: translateX(30px);
     opacity: 0;
+    border-radius: 4px;
 }
 
-.list-group-item.special-attention .fa-comment-medical {
+.animals-list-item.special-attention .fa-comment-medical {
     opacity: 1;
     transform: translateX(0px);
 }
 
-.list-group-item.increase .list-group-item-label,
-.list-group-item.increase .list-group-item-input {
+.animals-list-item.increase .animals-list-item-label,
+.animals-list-item.increase .animals-list-item-input {
     color: #e09f3e;
 }
 
-.list-group-item.increase .btn-star {
+.animals-list-item.increase .btn-star {
     color: #aeaeae;
 }

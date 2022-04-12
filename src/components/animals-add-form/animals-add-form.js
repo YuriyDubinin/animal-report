@@ -57,10 +57,10 @@ class AnimalsAddForm extends Component {
         return (
             <div className="app-add-form">
                 <h3>Добавить нового</h3>
-                <form className="add-form d-flex" onSubmit={this.onSubmit}>
+                <form className="add-form" onSubmit={this.onSubmit}>
                     <input
                         type="text"
-                        className="form-control new-post-label"
+                        className=""
                         placeholder="Имя"
                         name="name"
                         value={name}
@@ -75,7 +75,7 @@ class AnimalsAddForm extends Component {
                         onChange={this.onValueChange}
                     />
 
-                    <button type="submit" className="btn btn-outline-light">
+                    <button type="submit" className="btn-default">
                         Добавить
                     </button>
                 </form>
