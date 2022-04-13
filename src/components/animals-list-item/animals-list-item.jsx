@@ -1,25 +1,14 @@
 import "./animals-list-item.scss";
 
-const AnimalsListItem = (props) => {
-    const { name, kindOfAnimal, treatment, specialAttention } = props;
-
-    let classNames = "animals-list-item";
-
-    if (treatment) {
-        classNames += " increase";
-    }
-
-    if (specialAttention) {
-        classNames += " special-attention";
-    }
+const AnimalsListItem = () => {
     return (
-        <li className={classNames}>
+        <li className="animals-list-item">
             <div className="">
                 <button type="button" className="" title="Профиль">
                     <i className="fa-solid fa-id-card-clip"></i>
                 </button>
                 <span className="" title="Имя животного">
-                    {name}
+                    Имя животного
                 </span>
                 <button type="button" className="" title="Отчёт">
                     <i className="fa-solid fa-book"></i>
@@ -28,7 +17,7 @@ const AnimalsListItem = (props) => {
 
             <div className="">
                 <span className="" title="Тип животного">
-                    {kindOfAnimal}
+                    Тип животного
                 </span>
             </div>
 
