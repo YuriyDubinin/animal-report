@@ -1,0 +1,27 @@
+.app-info {
+    padding: 5px 25px;
+    background-color: #12515d;
+    border-radius: 4px;
+    box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.15);
+    color: #fff;
+    h2 {
+        span {
+            color: #e09f3e;
+        }
+    }
+    h3 {
+        font-size: 22px;
+        span {
+            color: #3ee059;
+        }
+    }
+}
+
+/*
+Color theme:
+.color1 {color: #122207;}
+.color2 {color: #12515d;}
+.color3 {color: #f28988;}
+.color4 {color: #f1d078;}
+.color5 {color: #f6efc9;}
+*/

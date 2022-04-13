@@ -1,7 +1,5 @@
 import { Component } from "react";
 
-import "./animals-delete-form.css";
-
 class AnimalsDeleteForm extends Component {
     constructor(props) {
         super(props);
@@ -55,6 +53,7 @@ class AnimalsDeleteForm extends Component {
     render() {
         const { name, kindOfAnimal } = this.state;
 
+        //uses class names of animals-add-form.scss
         return (
             <div className="app-add-form">
                 <h3>Удалить</h3>

@@ -8,11 +8,11 @@
     transition: 0.3s all;
     cursor: pointer;
     font-size: 16px;
-}
-.btn-default:hover {
-    color: black;
-    background-color: white;
-    border: solid 1px white;
+    &:hover {
+        color: black;
+        background-color: white;
+        border: solid 1px white;
+    }
 }
 .btn-default-light {
     color: black;

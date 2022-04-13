@@ -8,7 +8,7 @@ import AnimalsAddForm from "../animals-add-form/animals-add-form";
 import AnimalsDeleteForm from "../animals-delete-form/animals-delete-form";
 import Modal from "../modal/modal";
 
-import "./app.css";
+import "./app.scss";
 
 const App = () => {
     const [data, setData] = useState([

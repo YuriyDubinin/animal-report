@@ -1,4 +1,4 @@
-import "./animals-list-item.css";
+import "./animals-list-item.scss";
 
 const AnimalsListItem = (props) => {
     const { name, kindOfAnimal, treatment, specialAttention, onToggleProp } = props;

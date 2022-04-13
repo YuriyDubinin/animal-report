@@ -1,6 +1,6 @@
 import AnimalsListItem from "../animals-list-item/animals-list-item";
 
-import "./animals-list.css";
+import "./animals-list.scss";
 
 const AnimalsList = ({ data, onToggleProp }) => {
     const elements = data.map((item) => {
