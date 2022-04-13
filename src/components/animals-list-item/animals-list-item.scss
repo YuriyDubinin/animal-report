@@ -3,85 +3,62 @@
     padding: 15px 20px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
     background-color: white;
     border-radius: 4px;
-}
 
-.animals-list-item:last-child {
-    border-bottom: none;
-}
+    span {
+        padding: 0 10px;
+        line-height: 35px;
+        font-size: 20px;
+    }
+    button {
+        margin: 5px;
+        padding: 5px;
+        width: 45px;
+        height: 45px;
+        font-size: 17px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        background-color: rgba(#fffbbf, 0.344);
+        transition: 0.3s all;
+        i {
+            color: rgba(#0d6577, 0.644);
+            transform: scale(1.5);
+        }
+        &:hover {
+            background-color: #ffe94a;
+            i {
+                color: rgba(#122a1d, 1);
+            }
+        }
+    }
+    &__indicators {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        list-style-type: none;
 
-.animals-list-item .btn-raport {
-    color: #6b2a1f;
-    transition: 0.3s all;
-    opacity: 0.5;
-}
-
-.btn-raport:hover {
-    opacity: 1;
-}
-
-.animals-list-item span {
-    line-height: 35px;
-    font-size: 20px;
-    cursor: pointer;
-}
-
-.animals-list-item input {
-    line-height: 35px;
-    font-size: 20px;
-    text-align: center;
-    border: 0;
-}
-
-.animals-list-item .btn-set-attention {
-    color: #d89bd0;
-    transition: 0.3s all;
-    opacity: 0.7;
-}
-.btn-set-attention:hover {
-    opacity: 1;
-}
-
-.animals-list-item button {
-    width: 35px;
-    height: 35px;
-    margin: 3px;
-    font-size: 17px;
-    border: none;
-    cursor: pointer;
-}
-.animals-list-item .btn-treatment {
-    color: #e09f3e;
-    transition: 0.3s all;
-    opacity: 0.5;
-}
-.btn-treatment:hover {
-    opacity: 1;
-}
-.animals-list-item .fa-comment-medical {
-    width: 35px;
-    height: 35px;
-    text-align: center;
-    line-height: 35px;
-    font-size: 16px;
-    color: #19b723;
-    transition: 0.3s all;
-    transform: translateX(30px);
-    opacity: 0;
-    border-radius: 4px;
-}
-
-.animals-list-item.special-attention .fa-comment-medical {
-    opacity: 1;
-    transform: translateX(0px);
-}
-
-.animals-list-item.increase .animals-list-item-label,
-.animals-list-item.increase .animals-list-item-input {
-    color: #e09f3e;
-}
-
-.animals-list-item.increase .btn-star {
-    color: #aeaeae;
+        li {
+            padding: 5px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i {
+                transform: scale(2);
+            }
+            &:nth-child(1) {
+                color: rgb(96, 224, 96);
+            }
+            &:nth-child(2) {
+                color: rgb(250, 173, 39);
+            }
+            &:nth-child(3) {
+                color: rgb(211, 0, 0);
+            }
+        }
+    }
 }

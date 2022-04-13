@@ -12,23 +12,142 @@ import "./app.scss";
 
 const App = () => {
     const [data, setData] = useState([
-            { name: "Ляля", kindOfAnimal: "Морской лев", treatment: false, specialAttention: false, id: 1 },
-            { name: "Чемал", kindOfAnimal: "Белый кит", treatment: false, specialAttention: false, id: 2 },
-            { name: "Сева", kindOfAnimal: "Дельфин", treatment: false, specialAttention: false, id: 3 },
-            { name: "Артём", kindOfAnimal: "Дельфин", treatment: false, specialAttention: false, id: 4 },
-            { name: "Ая", kindOfAnimal: "Белый кит", treatment: false, specialAttention: false, id: 5 },
-            { name: "Тика", kindOfAnimal: "Морж", treatment: false, specialAttention: false, id: 6 },
-            { name: "Мэри", kindOfAnimal: "Морской лев", treatment: false, specialAttention: false, id: 7 },
-            { name: "Нюша", kindOfAnimal: "Дельфин", treatment: false, specialAttention: false, id: 8 },
-            { name: "Миша", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 9 },
-            { name: "Марина", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 10 },
-            { name: "Боб", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 11 },
-            { name: "Жора", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 12 },
-            { name: "Грызя", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 13 },
-            { name: "Кнопа", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 14 },
-            { name: "Умка", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 15 },
-            { name: "Пух", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 16 },
-            { name: "Кекс", kindOfAnimal: "Нерпа", treatment: false, specialAttention: false, id: 17 },
+            {
+                name: "Ляля",
+                kindOfAnimal: "Морской лев",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 1,
+            },
+            {
+                name: "Чемал",
+                kindOfAnimal: "Белый кит",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 2,
+            },
+            {
+                name: "Сева",
+                kindOfAnimal: "Дельфин",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 3,
+            },
+            {
+                name: "Артём",
+                kindOfAnimal: "Дельфин",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 4,
+            },
+            {
+                name: "Ая",
+                kindOfAnimal: "Белый кит",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 5,
+            },
+            {
+                name: "Тика",
+                kindOfAnimal: "Морж",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 6,
+            },
+            {
+                name: "Мэри",
+                kindOfAnimal: "Морской лев",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 7,
+            },
+            {
+                name: "Нюша",
+                kindOfAnimal: "Дельфин",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 8,
+            },
+            {
+                name: "Миша",
+                kindOfAnimal: "Нерпа",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 9,
+            },
+            {
+                name: "Марина",
+                kindOfAnimal: "Нерпа",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 10,
+            },
+            {
+                name: "Боб",
+                kindOfAnimal: "Нерпа",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 11,
+            },
+            {
+                name: "Жора",
+                kindOfAnimal: "Нерпа",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 12,
+            },
+            {
+                name: "Грызя",
+                kindOfAnimal: "Нерпа",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 13,
+            },
+            {
+                name: "Кнопа",
+                kindOfAnimal: "Нерпа",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 14,
+            },
+            {
+                name: "Умка",
+                kindOfAnimal: "Нерпа",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 15,
+            },
+            {
+                name: "Пух",
+                kindOfAnimal: "Нерпа",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 16,
+            },
+            {
+                name: "Кекс",
+                kindOfAnimal: "Нерпа",
+                treatment: false,
+                specialAttention: false,
+                inDangerousState: false,
+                id: 17,
+            },
         ]),
         [term, setTerm] = useState(""),
         [filterMode, setFilterMode] = useState("Все"),
@@ -69,18 +188,6 @@ const App = () => {
         } else {
             return false;
         }
-    };
-
-    //reverse prop value
-    const onToggleProp = (id, prop) => {
-        setData(
-            data.map((item) => {
-                if (item.id === id) {
-                    return { ...item, [prop]: !item[prop] };
-                }
-                return item;
-            })
-        );
     };
 
     //searches for animals by spelling in name
@@ -139,7 +246,8 @@ const App = () => {
 
     const totalAnimals = data.length,
         animalsOnTreatment = data.filter((item) => item.treatment).length,
-        animalsOnSpecialAttention = data.filter((item) => item.specialAttention).length;
+        animalsOnSpecialAttention = data.filter((item) => item.specialAttention).length,
+        inDangerousState = data.filter((item) => item.inDangerousState).length;
 
     //data displayed in the main list
     const visibleData = filterAnimals(searchAnimals(data, term), filterMode);
@@ -149,6 +257,7 @@ const App = () => {
                 totalAnimals={totalAnimals}
                 animalsOnTreatment={animalsOnTreatment}
                 animalsOnSpecialAttention={animalsOnSpecialAttention}
+                inDangerousState={inDangerousState}
             />
 
             <div className="search-panel">
@@ -156,7 +265,7 @@ const App = () => {
                 <AppFilter filterMode={filterMode} onUpdateFilter={onUpdateFilter} />
             </div>
 
-            <AnimalsList data={visibleData} onToggleProp={onToggleProp} />
+            <AnimalsList data={visibleData} />
             <AnimalsAddForm onAdd={addItem} onCheck={checkAvailability} onModalActive={setModalActive} />
             <AnimalsDeleteForm onDelete={deleteItem} onCheck={checkAvailability} onModalActive={setModalActive} />
             <Modal active={modalActive} onModalActive={onModalActive} />

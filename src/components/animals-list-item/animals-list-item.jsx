@@ -1,7 +1,7 @@
 import "./animals-list-item.scss";
 
 const AnimalsListItem = (props) => {
-    const { name, kindOfAnimal, treatment, specialAttention, onToggleProp } = props;
+    const { name, kindOfAnimal, treatment, specialAttention } = props;
 
     let classNames = "animals-list-item";
 
@@ -15,36 +15,34 @@ const AnimalsListItem = (props) => {
     return (
         <li className={classNames}>
             <div className="">
+                <button type="button" className="" title="Профиль">
+                    <i className="fa-solid fa-id-card-clip"></i>
+                </button>
                 <span className="" title="Имя животного">
                     {name}
                 </span>
-                <button type="button" className="btn-raport btn-sm" title="Отчёт">
+                <button type="button" className="" title="Отчёт">
                     <i className="fa-solid fa-book"></i>
                 </button>
             </div>
 
             <div className="">
-                <span className="animals-list-item-label" title="Тип животного">
+                <span className="" title="Тип животного">
                     {kindOfAnimal}
                 </span>
-                <button
-                    type="button"
-                    className="btn-set-attention btn-sm"
-                    onClick={onToggleProp}
-                    data-toggle="specialAttention"
-                    title="Установить дополнительное наблюдение"
-                >
-                    <i className="fa-solid fa-eye"></i>
-                </button>
             </div>
 
-            <div className="">
-                <button type="button" className="btn-treatment btn-sm " onClick={onToggleProp} data-toggle="treatment">
-                    <i className="fa-solid fa-suitcase-medical" title="Индикатор лечения"></i>
-                </button>
-
-                <i className="fa-solid fa-comment-medical" title="Дополнительное наблюдение"></i>
-            </div>
+            <ul className="animals-list-item__indicators">
+                <li>
+                    <i className="fa-solid fa-eye" title="Дополнительное наблюдение"></i>
+                </li>
+                <li>
+                    <i className="fa-solid fa-comment-medical" title="Находится на лечении"></i>
+                </li>
+                <li>
+                    <i className="fa-solid fa-bolt" title="В опасном состоянии"></i>
+                </li>
+            </ul>
         </li>
     );
 };

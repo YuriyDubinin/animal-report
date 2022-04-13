@@ -1,16 +1,25 @@
 import "./app-info.scss";
 
-const AppInfo = ({ totalAnimals, animalsOnSpecialAttention, animalsOnTreatment }) => {
+const AppInfo = ({ totalAnimals, animalsOnSpecialAttention, animalsOnTreatment, inDangerousState }) => {
     return (
         <div className="app-info">
-            <h1>Учет животных в компании</h1>
-            <h3>Общее число животных: {totalAnimals}</h3>
-            <h3>
-                Под доп.наблюдением: <span>{animalsOnSpecialAttention}</span>
-            </h3>
-            <h2>
-                На лечении: <span>{animalsOnTreatment}</span>
-            </h2>
+            <ul className="app-info__list">
+                <li>
+                    <h2>Учет животных в компании</h2>
+                </li>
+                <li>
+                    Общее число животных: <span>{totalAnimals}</span>
+                </li>
+                <li>
+                    Под доп.наблюдением: <span>{animalsOnSpecialAttention}</span>
+                </li>
+                <li>
+                    На лечении: <span>{animalsOnTreatment}</span>
+                </li>
+                <li>
+                    В опасном состоянии: <span>{inDangerousState}</span>
+                </li>
+            </ul>
         </div>
     );
 };
