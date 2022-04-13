@@ -1,0 +1,140 @@
+{
+    "animals": [
+        {
+            "id": 1,
+            "name": "Ляля",
+            "kindOfAnimal": "Морской лев",
+            "treatment": false,
+            "specialAttention": false,
+            "inDangerousState": false
+        },
+        {
+            "id": 2,
+            "name": "Чемал",
+            "kindOfAnimal": "Белый кит",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 3,
+            "name": "Сева",
+            "kindOfAnimal": "Дельфин",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 4,
+            "name": "Артём",
+            "kindOfAnimal": "Дельфин",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 5,
+            "name": "Ая",
+            "kindOfAnimal": "Белый кит",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 6,
+            "name": "Тика",
+            "kindOfAnimal": "Морж",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 7,
+            "name": "Мэри",
+            "kindOfAnimal": "Морской лев",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 8,
+            "name": "Нюша",
+            "kindOfAnimal": "Дельфин",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 9,
+            "name": "Миша",
+            "kindOfAnimal": "Нерпа",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 10,
+            "name": "Марина",
+            "kindOfAnimal": "Нерпа",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 11,
+            "name": "Боб",
+            "kindOfAnimal": "Нерпа",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 12,
+            "name": "Жора",
+            "kindOfAnimal": "Нерпа",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 13,
+            "name": "Грызя",
+            "kindOfAnimal": "Нерпа",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 14,
+            "name": "Кнопа",
+            "kindOfAnimal": "Нерпа",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 15,
+            "name": "Умка",
+            "kindOfAnimal": "Нерпа",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 16,
+            "name": "Пух",
+            "kindOfAnimal": "Нерпа",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 17,
+            "name": "Кекс",
+            "kindOfAnimal": "Нерпа",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        }
+    ]
+}
