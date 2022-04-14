@@ -1,6 +1,7 @@
 import "./animals-list-item.scss";
 
-const AnimalsListItem = () => {
+const AnimalsListItem = (props) => {
+    const { name, kindOfAnimal } = props;
     return (
         <li className="animals-list-item">
             <div className="">
@@ -8,7 +9,7 @@ const AnimalsListItem = () => {
                     <i className="fa-solid fa-id-card-clip"></i>
                 </button>
                 <span className="" title="Имя животного">
-                    Имя животного
+                    {name}
                 </span>
                 <button type="button" className="" title="Отчёт">
                     <i className="fa-solid fa-book"></i>
@@ -17,7 +18,7 @@ const AnimalsListItem = () => {
 
             <div className="">
                 <span className="" title="Тип животного">
-                    Тип животного
+                    {kindOfAnimal}
                 </span>
             </div>
 

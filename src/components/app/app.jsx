@@ -11,6 +11,7 @@ import "./app.scss";
 
 const App = () => {
     const [data, setData] = useState([]);
+
     const animalService = new AnimalService();
 
     useEffect(() => {
@@ -24,14 +25,14 @@ const App = () => {
 
     return (
         <div className="app">
-            <AppInfo />
+            <AppInfo data={data} />
 
             <div className="search-panel">
                 <SearchPanel />
                 <AppFilter />
             </div>
 
-            <AnimalsList />
+            <AnimalsList data={data} />
             <AnimalsForm />
         </div>
     );
