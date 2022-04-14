@@ -34,7 +34,7 @@
             }
         }
     }
-    &__indicators {
+    &__health-indicators {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -60,5 +60,11 @@
                 color: rgb(211, 0, 0);
             }
         }
+    }
+}
+.passive-health-indicator {
+    i {
+        color: grey;
+        opacity: 0.4;
     }
 }
