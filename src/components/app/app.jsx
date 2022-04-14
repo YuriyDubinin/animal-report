@@ -11,7 +11,8 @@ import "./app.scss";
 
 const App = () => {
     const [data, setData] = useState([]),
-        [term, setTerm] = useState("");
+        [term, setTerm] = useState(""),
+        [filterMode, setFilterMode] = useState("Все");
 
     const animalService = new AnimalService();
 
@@ -41,8 +42,43 @@ const App = () => {
         setTerm(term);
     };
 
+    //filters animals by category
+    const filterAnimals = (items, filterMode) => {
+        //filter by according to the state of the animal
+        if (filterMode === "Доп.наблюдение") {
+            return items.filter((item) => item.specialAttention);
+        }
+        if (filterMode === "На лечении") {
+            return items.filter((item) => item.treatment);
+        }
+        if (filterMode === "В опасности") {
+            return items.filter((item) => item.inDangerousState);
+        }
+
+        //filter by kind
+        switch (filterMode) {
+            case "Белый кит":
+                return items.filter((item) => item.kindOfAnimal === "Белый кит");
+            case "Дельфин":
+                return items.filter((item) => item.kindOfAnimal === "Дельфин");
+            case "Морж":
+                return items.filter((item) => item.kindOfAnimal === "Морж");
+            case "Морской лев":
+                return items.filter((item) => item.kindOfAnimal === "Морской лев");
+            case "Нерпа":
+                return items.filter((item) => item.kindOfAnimal === "Нерпа");
+            default:
+                return items;
+        }
+    };
+
+    //sets the filterMode
+    const onUpdateFilter = (filterMode) => {
+        setFilterMode(filterMode);
+    };
+
     //search & filter result
-    const visibleData = searchAnimal(data, term);
+    const visibleData = filterAnimals(searchAnimal(data, term), filterMode);
 
     return (
         <div className="app">
@@ -50,7 +86,7 @@ const App = () => {
 
             <div className="search-panel">
                 <SearchPanel onUpdateSearch={onUpdateSearch} />
-                <AppFilter />
+                <AppFilter filterMode={filterMode} onUpdateFilter={onUpdateFilter} />
             </div>
 
             <AnimalsList data={visibleData} />

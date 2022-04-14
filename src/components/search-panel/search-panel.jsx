@@ -12,7 +12,7 @@ const SearchPanel = (props) => {
         props.onUpdateSearch(value);
     };
 
-    return <input type="text" placeholder="Поиск" onChange={onUpdateSearch} />;
+    return <input type="text" placeholder="Поиск" onChange={onUpdateSearch} value={term} />;
 };
 
 export default SearchPanel;

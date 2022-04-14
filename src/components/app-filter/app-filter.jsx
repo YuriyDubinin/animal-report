@@ -1,6 +1,6 @@
 import "./app-filter.scss";
 
-const AppFilter = () => {
+const AppFilter = ({ filterMode, onUpdateFilter }) => {
     const buttonsData = [
         { name: "Все", label: "Все" },
         { name: "Белый кит", label: "Белые киты" },
@@ -10,16 +10,22 @@ const AppFilter = () => {
         { name: "Нерпа", label: "Нерпы" },
         { name: "Доп.наблюдение", label: "Доп.наблюдение" },
         { name: "На лечении", label: "На лечении" },
+        { name: "В опасности", label: "В опасности" },
     ];
 
     const buttons = buttonsData.map(({ name, label }) => {
         //checking where the filter matches
-        const active = false; //= filterMode === name;
+        const active = filterMode === name;
 
         const classNames = active ? "btn-default-light" : null;
 
         return (
-            <button type="button" className={`btn-default ${classNames}`} key={name}>
+            <button
+                type="button"
+                className={`btn-default ${classNames}`}
+                key={name}
+                onClick={() => onUpdateFilter(name)}
+            >
                 {label}
             </button>
         );
