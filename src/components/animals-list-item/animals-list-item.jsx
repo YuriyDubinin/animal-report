@@ -1,7 +1,6 @@
 import "./animals-list-item.scss";
 
-const AnimalsListItem = (props) => {
-    const { name, kindOfAnimal } = props;
+const AnimalsListItem = ({ name, kindOfAnimal, treatment, specialAttention, inDangerousState }) => {
     return (
         <li className="animals-list-item">
             <div className="">
