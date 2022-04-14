@@ -1,7 +1,18 @@
+import { useState } from "react";
+
 import "./search-panel.scss";
 
 const SearchPanel = (props) => {
-    return <input type="text" placeholder="Поиск" defaultValue="" />;
+    const [term, setTerm] = useState("");
+
+    const onUpdateSearch = (event) => {
+        const value = event.target.value;
+
+        setTerm(value);
+        props.onUpdateSearch(value);
+    };
+
+    return <input type="text" placeholder="Поиск" onChange={onUpdateSearch} />;
 };
 
 export default SearchPanel;
