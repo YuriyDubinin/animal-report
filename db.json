@@ -1,5 +1,5 @@
 {
-    "animals": [
+    "mainAnimalsList": [
         {
             "id": 1,
             "name": "Ляля",

@@ -5,11 +5,14 @@ import AppInfo from "../app-info/app-info";
 import SearchPanel from "../search-panel/search-panel";
 import AppFilter from "../app-filter/app-filter";
 import AnimalsList from "../animals-list/animals-list";
-import AnimalsForm from "../animals-form/animals-form";
+import AnimalsAddForm from "../animals-add-form/animals-add-form";
 
 import "./app.scss";
 
 const App = () => {
+    //a special state that is used when a rerender is needed
+    const [reRender, setReRender] = useState(false);
+
     const [data, setData] = useState([]),
         [term, setTerm] = useState(""),
         [filterMode, setFilterMode] = useState("Все");
@@ -19,12 +22,23 @@ const App = () => {
     //getting the main object with data from the server
     useEffect(() => {
         animalService
-            .getResource()
+            .getMainAnimalsList()
             .then((data) => {
                 setData(data);
             })
-            .catch("ERROR: something wrong");
+            .catch("ERROR: failed to receive 'mainAnimalList' from db");
     }, []);
+
+    //used when there is a need to rerender
+    useEffect(() => {
+        animalService
+            .getMainAnimalsList()
+            .then((data) => {
+                setData(data);
+                setReRender(false);
+            })
+            .catch("ERROR: failed to receive 'mainAnimalList' from db");
+    }, [reRender]);
 
     //search by ascinding string to name
     const searchAnimal = (items, term) => {
@@ -90,7 +104,8 @@ const App = () => {
             </div>
 
             <AnimalsList data={visibleData} />
-            <AnimalsForm />
+
+            <AnimalsAddForm data={data} setReRender={setReRender} />
         </div>
     );
 };

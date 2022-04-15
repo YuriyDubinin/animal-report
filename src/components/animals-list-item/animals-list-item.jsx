@@ -28,10 +28,10 @@ const AnimalsListItem = ({ name, kindOfAnimal, treatment, specialAttention, inDa
             </div>
 
             <ul className="animals-list-item__health-indicators">
-                <li className={styleDistributor(treatment)}>
+                <li className={styleDistributor(specialAttention)}>
                     <i className="fa-solid fa-eye" title="Дополнительное наблюдение"></i>
                 </li>
-                <li className={styleDistributor(specialAttention)}>
+                <li className={styleDistributor(treatment)}>
                     <i className="fa-solid fa-comment-medical" title="Находится на лечении"></i>
                 </li>
                 <li className={styleDistributor(inDangerousState)}>
