@@ -1,0 +1,133 @@
+.personal-profile {
+    &__main {
+        max-width: 1000px;
+        display: flex;
+        justify-content: space-evenly;
+    }
+
+    &__left-column {
+        flex: 0 0 35%;
+    }
+
+    &__photo {
+        max-width: 100%;
+        max-height: 100%;
+        border-radius: 4px;
+        img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+    }
+
+    &__health-bar {
+        height: 80px;
+        background-color: rgba(#12515d, 0.8);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        button {
+            margin: 0 20px 0 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            border: none;
+            background-color: rgb(21, 21, 21);
+            cursor: pointer;
+            i {
+                transform: scale(2.6);
+                transition: 0.3s all;
+            }
+            &:nth-child(1) {
+                color: rgb(96, 224, 96);
+            }
+            &:nth-child(2) {
+                color: rgb(250, 173, 39);
+            }
+            &:nth-child(3) {
+                color: rgb(211, 0, 0);
+            }
+        }
+    }
+
+    &__right-column {
+        flex: 0 0 45%;
+    }
+
+    &__basic {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        p {
+            flex: 0 0 40%;
+            color: #12515d;
+            font-weight: 600;
+        }
+        input {
+            padding: 0 0 0 15px;
+            height: 35px;
+            border-radius: 4px;
+            border: 0;
+            outline: none;
+            &:focus {
+                box-shadow: 0px 0px 4px #12515d;
+            }
+        }
+    }
+
+    &__ration {
+        p {
+            display: inline;
+        }
+        input {
+            margin: 5px 5px 0 0;
+            padding: 0 0 0 5px;
+            height: 36px;
+            border: 0;
+            border-radius: 4px;
+            border: 0;
+            outline: none;
+            font-size: 17px;
+            &:focus {
+                box-shadow: 0px 0px 4px #12515d;
+            }
+            &:last-child {
+                width: 70px;
+                padding: 0 0 0 15px;
+            }
+        }
+    }
+
+    &__main-button-bar {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        button {
+            margin: 0 20px 0 0;
+            width: 60px;
+            height: 60px;
+            border-radius: 4px;
+            border: none;
+            background-color: rgb(21, 21, 21);
+            cursor: pointer;
+
+            i {
+                transform: scale(2.6);
+                transition: 0.3s all;
+            }
+            &:hover {
+                i {
+                    transform: scale(3);
+                }
+            }
+            &:nth-child(1) {
+                color: rgb(211, 0, 0);
+            }
+            &:nth-child(2) {
+                color: rgb(96, 224, 96);
+            }
+        }
+    }
+}

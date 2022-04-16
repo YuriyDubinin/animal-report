@@ -14,7 +14,7 @@ const AnimalsAddForm = ({ data, setReRender }) => {
     const animalService = new AnimalService();
 
     const messageSet = {
-        success: `${kindOfAnimal} по кличке ${name} добавлен(а) в базу данных`,
+        success: `${kindOfAnimal} по кличке '${name}' добавлен(а) в базу данных`,
         wrongInput: `Животное не добавлено: длина имени и типа животного должны состоять из 2х и более символов`,
         alreadyExists: `Животное не добавлено: уже есть животное такого вида и с таким именем`,
         failure: `Ошибка, что-то пошло не так..(`,

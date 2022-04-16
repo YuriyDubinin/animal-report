@@ -97,14 +97,11 @@ const App = () => {
     return (
         <div className="app">
             <AppInfo data={data} />
-
             <div className="search-panel">
                 <SearchPanel onUpdateSearch={onUpdateSearch} />
                 <AppFilter filterMode={filterMode} onUpdateFilter={onUpdateFilter} />
             </div>
-
             <AnimalsList data={visibleData} />
-
             <AnimalsAddForm data={data} setReRender={setReRender} />
         </div>
     );
