@@ -26,4 +26,25 @@
             }
         }
     }
+    &__modal-message {
+        position: relative;
+        padding: 15px 20px 45px 20px;
+        color: black;
+        background-color: white;
+        font-size: 18px;
+        border-radius: 4px;
+        i {
+            padding: 3px;
+            transform: scale(1.9);
+            position: absolute;
+            bottom: 12px;
+            left: 48%;
+            cursor: pointer;
+            color: #12515d;
+            transition: 0.3s all;
+            &:hover {
+                transform: scale(2.2);
+            }
+        }
+    }
 }

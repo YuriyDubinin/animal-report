@@ -13,12 +13,12 @@ const AnimalsListItem = ({ name, kindOfAnimal, treatment, specialAttention, inDa
                 <button type="button" className="" title="Профиль">
                     <i className="fa-solid fa-id-card-clip"></i>
                 </button>
-                <span className="" title="Имя животного">
-                    {name}
-                </span>
                 <button type="button" className="" title="Отчёт">
                     <i className="fa-solid fa-book"></i>
                 </button>
+                <span className="" title="Имя животного">
+                    {name}
+                </span>
             </div>
 
             <div className="">

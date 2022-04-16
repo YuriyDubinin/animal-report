@@ -22,15 +22,17 @@
         border-radius: 4px;
         cursor: pointer;
         background-color: rgba(#fffbbf, 0.344);
-        transition: 0.3s all;
+
         i {
+            transition: 0.3s all;
             color: rgba(#0d6577, 0.644);
             transform: scale(1.5);
         }
         &:hover {
-            background-color: #ffe94a;
+            background-color: rgba(#fffbbf, 0);
             i {
-                color: rgba(#122a1d, 1);
+                color: rgba(#0d6577, 1);
+                transform: scale(1.9);
             }
         }
     }

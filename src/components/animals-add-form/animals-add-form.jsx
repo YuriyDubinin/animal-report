@@ -1,14 +1,24 @@
 import { useState } from "react";
 
 import AnimalService from "../../services/animal-service";
+import Modal from "../modal/modal";
 
 import "./animals-add-form.scss";
 
 const AnimalsAddForm = ({ data, setReRender }) => {
     const [name, setName] = useState(""),
-        [kindOfAnimal, setKindOfAnimal] = useState("");
+        [kindOfAnimal, setKindOfAnimal] = useState(""),
+        [modalActive, setModalActive] = useState(false),
+        [modalMessage, setModalMessage] = useState("");
 
     const animalService = new AnimalService();
+
+    const messageSet = {
+        success: `${kindOfAnimal} по кличке ${name} добавлен(а) в базу данных`,
+        wrongInput: `Животное не добавлено: длина имени и типа животного должны состоять из 2х и более символов`,
+        alreadyExists: `Животное не добавлено: уже есть животное такого вида и с таким именем`,
+        failure: `Ошибка, что-то пошло не так..(`,
+    };
 
     const onNameChange = (event) => {
         setName(event.target.value);
@@ -20,9 +30,12 @@ const AnimalsAddForm = ({ data, setReRender }) => {
 
     //returns true/false depending on check
     const checkingPossibilityOfAdiing = () => {
-        //condition that checked the general correctness of the input
+        //a condition that checked the general correctness of the input
         if (name.length < 2 || kindOfAnimal.length < 2) {
-            console.log("Животное не добавлено: длина имени и типа животного должны состоять из 2х и более символов");
+            //setting the message of the modal window and calling it
+            setModalMessage(messageSet.wrongInput);
+            setModalActive(true);
+
             return false;
         }
 
@@ -34,7 +47,10 @@ const AnimalsAddForm = ({ data, setReRender }) => {
                 }
             }).length > 0
         ) {
-            console.log("Животное не добавлено: уже есть животное такого вида с таким именем");
+            //setting the message of the modal window and calling it
+            setModalMessage(messageSet.alreadyExists);
+            setModalActive(true);
+
             return false;
         }
 
@@ -67,13 +83,36 @@ const AnimalsAddForm = ({ data, setReRender }) => {
 
             setReRender(true);
 
-            console.log(`${kindOfAnimal} по кличке ${name} добавлен(а) в список животных`);
+            //setting the message of the modal window and calling it
+            setModalMessage(messageSet.success);
+            setModalActive(true);
         }
 
         //clear form
         setName("");
         setKindOfAnimal("");
     };
+
+    //setting modal window activity
+    const onSetModalActive = (bool) => {
+        setModalActive(bool);
+    };
+
+    //create modal window with message
+    const createModalWindow = () => {
+        return (
+            <div className="animals-add-form__modal-message">
+                {modalMessage}
+
+                <i className="fa-solid fa-circle-check" onClick={() => setModalActive(false)}></i>
+            </div>
+        );
+    };
+
+    //conditional rendering of modal window
+    const modalWindowIsShown = modalActive ? (
+        <Modal onSetModalActive={onSetModalActive}>{createModalWindow()}</Modal>
+    ) : null;
 
     return (
         <div className="animals-add-form">
@@ -92,6 +131,8 @@ const AnimalsAddForm = ({ data, setReRender }) => {
                     Добавить
                 </button>
             </form>
+
+            {modalWindowIsShown}
         </div>
     );
 };
