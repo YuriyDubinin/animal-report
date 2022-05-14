@@ -6,6 +6,8 @@ import SearchPanel from "../search-panel/search-panel";
 import AppFilter from "../app-filter/app-filter";
 import AnimalsList from "../animals-list/animals-list";
 import AnimalsAddForm from "../animals-add-form/animals-add-form";
+import Modal from "../modal/modal";
+import PersonalProfile from "../personal-profile/personal-profile";
 
 import "./app.scss";
 
@@ -15,7 +17,8 @@ const App = () => {
 
     const [data, setData] = useState([]),
         [term, setTerm] = useState(""),
-        [filterMode, setFilterMode] = useState("Все");
+        [filterMode, setFilterMode] = useState("Все"),
+        [modalActive, setModalActive] = useState(false);
 
     const animalService = new AnimalService();
 
@@ -91,8 +94,19 @@ const App = () => {
         setFilterMode(filterMode);
     };
 
+    const onSetModalActive = (bool) => {
+        setModalActive(bool);
+    };
+
     //search & filter result
     const visibleData = filterAnimals(searchAnimal(data, term), filterMode);
+
+    const getAnimalById = (id) => {};
+
+    //conditional rendering
+    const modalWindowIsShown = modalActive ? (
+        <Modal onSetModalActive={onSetModalActive}>{<PersonalProfile animal={{}} />}</Modal>
+    ) : null;
 
     return (
         <div className="app">
@@ -101,8 +115,9 @@ const App = () => {
                 <SearchPanel onUpdateSearch={onUpdateSearch} />
                 <AppFilter filterMode={filterMode} onUpdateFilter={onUpdateFilter} />
             </div>
-            <AnimalsList data={visibleData} />
+            <AnimalsList data={visibleData} onSetModalActive={onSetModalActive} />
             <AnimalsAddForm data={data} setReRender={setReRender} />
+            {modalWindowIsShown}
         </div>
     );
 };

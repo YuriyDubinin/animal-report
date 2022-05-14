@@ -1,6 +1,16 @@
+import Modal from "../modal/modal";
+
 import "./animals-list-item.scss";
 
-const AnimalsListItem = ({ name, kindOfAnimal, treatment, specialAttention, inDangerousState }) => {
+const AnimalsListItem = ({
+    id,
+    name,
+    kindOfAnimal,
+    treatment,
+    specialAttention,
+    inDangerousState,
+    onSetModalActive,
+}) => {
     //Adding a passivity class to indicators depending on a property
     const styleDistributor = (property) => {
         const className = property ? null : "passive-health-indicator";
@@ -10,7 +20,15 @@ const AnimalsListItem = ({ name, kindOfAnimal, treatment, specialAttention, inDa
     return (
         <li className="animals-list-item">
             <div className="">
-                <button type="button" className="" title="Профиль">
+                <button
+                    type="button"
+                    className=""
+                    title="Профиль"
+                    onClick={() => {
+                        console.log(id);
+                        onSetModalActive(true);
+                    }}
+                >
                     <i className="fa-solid fa-id-card-clip"></i>
                 </button>
                 <button type="button" className="" title="Отчёт">
