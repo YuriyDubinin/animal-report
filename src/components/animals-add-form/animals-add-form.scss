@@ -33,6 +33,7 @@
         background-color: white;
         font-size: 18px;
         border-radius: 4px;
+        animation: block-appearance duration timing-function delay iteration-count direction fill-mode;
         i {
             padding: 3px;
             transform: scale(1.9);

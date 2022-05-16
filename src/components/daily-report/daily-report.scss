@@ -1,0 +1,102 @@
+@import "../../style/animation.scss";
+
+.daily-report {
+    height: 630px;
+    width: 700px;
+    &__title {
+        margin: 0;
+        font-size: 24px;
+        text-align: center;
+        color: #12515d;
+    }
+    &__body {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__item {
+        margin-top: 15px;
+        flex: 0 0 45%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        animation: block-appearance 1s 0.2s forwards;
+        opacity: 0;
+    }
+    &__subtitle {
+        flex: 0 0 100%;
+        margin: 0 0 10px 0;
+        font-size: 20px;
+        text-align: center;
+        color: #12515d;
+    }
+    &__label {
+        margin: 0;
+        flex: 0 0 50%;
+        display: block;
+        font-size: 18px;
+        p {
+            margin: 4px 0;
+        }
+    }
+    &__input {
+        max-width: 100px;
+        flex: 0 0 50%;
+        align-self: center;
+        padding: 0 0 0 5px;
+        height: 30px;
+        border: 0;
+        border-radius: 4px;
+        outline: none;
+        font-size: 17px;
+        &:focus {
+            box-shadow: 0px 0px 4px #12515d;
+        }
+    }
+    &__textarea {
+        flex: 0 0 90%;
+        align-self: center;
+        padding: 5px 0 0 5px;
+        max-height: 100px;
+        border: 0;
+        border-radius: 4px;
+        outline: none;
+        font-size: 20px;
+        resize: none;
+        &:focus {
+            box-shadow: 0px 0px 4px #12515d;
+        }
+    }
+    &__submit-button {
+        position: absolute;
+        left: 55%;
+        bottom: 2%;
+        border: 0;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0);
+        opacity: 0;
+        animation: block-appearance 1s 0.8s forwards;
+        i {
+            padding: 3px;
+            transform: scale(2.6);
+            position: absolute;
+            bottom: 12px;
+            left: 48%;
+            cursor: pointer;
+            color: #12515d;
+            transition: 0.3s all;
+            &:hover {
+                transform: scale(3);
+            }
+        }
+    }
+}
+.formik-error-message {
+    align-self: center;
+    color: red;
+    font-size: 20px;
+    font-weight: 700;
+    animation: block-appearance 0.4s forwards;
+    opacity: 0;
+}

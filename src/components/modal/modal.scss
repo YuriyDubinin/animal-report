@@ -23,7 +23,7 @@
     position: relative;
 }
 .modal__content.active {
-    animation: apperanceFromSmallToNorm 0.4s;
+    animation: appearance-from-small-to-norm 0.4s;
 }
 .modal__close-btn {
     button {
@@ -36,7 +36,7 @@
         border-radius: 4px;
         border: none;
         background-color: rgb(21, 21, 21);
-        animation: apperanceFromSmallToNorm 1s 0s forwards;
+        animation: appearance-from-small-to-norm 1s 0s forwards;
         cursor: pointer;
 
         i {
@@ -51,7 +51,7 @@
         }
     }
 }
-@keyframes apperanceFromSmallToNorm {
+@keyframes appearance-from-small-to-norm {
     0% {
         transform: scale(0.2);
     }

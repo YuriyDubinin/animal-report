@@ -8,6 +8,7 @@ import AnimalsList from "../animals-list/animals-list";
 import AnimalsAddForm from "../animals-add-form/animals-add-form";
 import Modal from "../modal/modal";
 import PersonalProfile from "../personal-profile/personal-profile";
+import DailyReport from "../daily-report/daily-report";
 
 import "./app.scss";
 
@@ -113,7 +114,7 @@ const App = () => {
             case "report":
                 return (
                     <Modal onSetModalActive={onSetModalActive}>
-                        <div style={{ width: "600px", height: "500px", padding: "20px" }}>RAPORT</div>
+                        <DailyReport />
                     </Modal>
                 );
                 break;
