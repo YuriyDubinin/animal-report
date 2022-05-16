@@ -68,9 +68,6 @@ const PersonalProfile = (props) => {
                     </div>
                 </div>
                 <div className="personal-profile__main-button-bar">
-                    <button title="Закрыть без изменений">
-                        <i className="fa-solid fa-xmark"></i>
-                    </button>
                     <button title="Удалить животное">
                         <i className="fa-solid fa-trash-can"></i>
                     </button>

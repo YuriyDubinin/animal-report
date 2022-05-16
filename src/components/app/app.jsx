@@ -18,7 +18,8 @@ const App = () => {
     const [data, setData] = useState([]),
         [term, setTerm] = useState(""),
         [filterMode, setFilterMode] = useState("Все"),
-        [modalActive, setModalActive] = useState(false);
+        [modalActive, setModalActive] = useState(false),
+        [workTab, setWorkTab] = useState("report");
 
     const animalService = new AnimalService();
 
@@ -94,19 +95,35 @@ const App = () => {
         setFilterMode(filterMode);
     };
 
-    const onSetModalActive = (bool) => {
+    //turns on the modal window and sets the desired working tab
+    const onSetModalActive = (bool, workTab) => {
         setModalActive(bool);
+        setWorkTab(workTab);
     };
 
     //search & filter result
     const visibleData = filterAnimals(searchAnimal(data, term), filterMode);
 
-    const getAnimalById = (id) => {};
-
     //conditional rendering
-    const modalWindowIsShown = modalActive ? (
-        <Modal onSetModalActive={onSetModalActive}>{<PersonalProfile animal={{}} />}</Modal>
-    ) : null;
+    const renderActiveWorkTab = (workTab) => {
+        switch (workTab) {
+            case "profile":
+                return <Modal onSetModalActive={onSetModalActive}>{<PersonalProfile animal={{}} />}</Modal>;
+                break;
+            case "report":
+                return (
+                    <Modal onSetModalActive={onSetModalActive}>
+                        <div style={{ width: "600px", height: "500px", padding: "20px" }}>RAPORT</div>
+                    </Modal>
+                );
+                break;
+            default:
+                console.log(`Warning: required workTab value not found (workTab = ${workTab})`);
+                break;
+        }
+    };
+
+    const modalWindowIsShown = modalActive ? renderActiveWorkTab(workTab) : null;
 
     return (
         <div className="app">

@@ -24,14 +24,23 @@ const AnimalsListItem = ({
                     type="button"
                     className=""
                     title="Профиль"
-                    onClick={() => {
+                    data-work-tab="profile"
+                    onClick={(event) => {
                         console.log(id);
-                        onSetModalActive(true);
+                        onSetModalActive(true, event.currentTarget.getAttribute("data-work-tab"));
                     }}
                 >
                     <i className="fa-solid fa-id-card-clip"></i>
                 </button>
-                <button type="button" className="" title="Отчёт">
+                <button
+                    type="button"
+                    className=""
+                    title="Отчёт"
+                    data-work-tab="report"
+                    onClick={(event) => {
+                        onSetModalActive(true, event.currentTarget.getAttribute("data-work-tab"));
+                    }}
+                >
                     <i className="fa-solid fa-book"></i>
                 </button>
                 <span className="" title="Имя животного">

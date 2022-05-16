@@ -41,6 +41,16 @@ const Modal = (props) => {
                 }}
             >
                 {props.children}
+                <div className="modal__close-btn">
+                    <button
+                        title="Закрыть"
+                        onClick={() => {
+                            onSetModalActive(false);
+                        }}
+                    >
+                        <i className="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
             </div>
         </div>
     );
