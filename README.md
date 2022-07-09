@@ -10,15 +10,16 @@
 
 ## Features/highlights
 
--   the application is written using both class and functional React components
+-   the application is written using functional React components
 -   added search for animals by the occurrence of a word in the animals name
 -   implemented additional filtering of animals
+-   added animated interface
 
 ## Setup
 
 ```bash
-$ git clone https://github.com/YuriDubinin/accounting.git
-$ cd accounting
+$ git clone https://github.com/YuriyDubinin/animal-report.git
+$ cd animal-report
 $ npm i
 $ npm start
 ```
