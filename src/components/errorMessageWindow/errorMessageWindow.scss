@@ -1,0 +1,26 @@
+.error-message-window {
+    img {
+        display: block;
+        width: 250px;
+        height: 250px;
+        object-fit: contain;
+        margin: 0 auto;
+        animation: smooth-resizing 2s linear infinite;
+    }
+    span {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 25px;
+        font-weight: 700;
+        color: red;
+    }
+    p {
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        color: #454c55;
+        font-size: 18px;
+        font-weight: 700;
+    }
+}

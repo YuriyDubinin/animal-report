@@ -9,6 +9,7 @@ import AnimalsAddForm from "../animalsAddForm/AnimalsAddForm";
 import Modal from "../modal/Modal";
 import PersonalProfile from "../personalProfile/PersonalProfile";
 import DailyReport from "../dailyReport/DailyReport";
+import ErrorBoundary from "../errorBoundary/ErrorBoundary";
 
 import "./app.scss";
 
@@ -129,6 +130,7 @@ const App = () => {
     return (
         <div className="app">
             <AppInfo data={data} />
+
             <div className="search-panel">
                 <SearchPanel onUpdateSearch={onUpdateSearch} />
                 <AppFilter filterMode={filterMode} onUpdateFilter={onUpdateFilter} />
