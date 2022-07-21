@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import "./search-panel.scss";
+import "./searchPanel.scss";
 
 const SearchPanel = (props) => {
     const [term, setTerm] = useState("");

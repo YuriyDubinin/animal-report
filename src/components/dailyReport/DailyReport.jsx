@@ -1,7 +1,7 @@
 import { Formik, Field, Form, ErrorMessage as FormikErrorMessage } from "formik";
 import * as Yup from "yup";
 
-import "./daily-report.scss";
+import "./dailyReport.scss";
 
 const DailyReport = () => {
     return (

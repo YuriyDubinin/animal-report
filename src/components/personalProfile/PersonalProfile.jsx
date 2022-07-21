@@ -1,10 +1,10 @@
 import { useState } from "react";
-import WorkActivityGraphic from "../work-activity-graphic/work-activity-graphic";
-import FeedingGraphic from "../feeding-graphic/feeding-graphic";
+import WorkActivityGraphic from "../workActivityGraphic/WorkActivityGraphic";
+import FeedingGraphic from "../feedingGraphic/FeedingGraphic";
 
-import defaultProfilePhoto from "../../resources/img/default-profile-photo.jpg";
+import defaultProfilePhoto from "../../resources/img/default_profile_photo.jpg";
 
-import "./personal-profile.scss";
+import "./personalProfile.scss";
 
 const PersonalProfile = (props) => {
     const [animal, setAnimal] = useState(props.animal);

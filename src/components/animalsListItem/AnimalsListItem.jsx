@@ -1,6 +1,6 @@
-import Modal from "../modal/modal";
+import Modal from "../modal/Modal";
 
-import "./animals-list-item.scss";
+import "./animalsListItem.scss";
 
 const AnimalsListItem = ({
     id,

@@ -1,9 +1,9 @@
 import { useState } from "react";
 
-import AnimalService from "../../services/animal-service";
-import Modal from "../modal/modal";
+import AnimalService from "../../services/AnimalService";
+import Modal from "../modal/Modal";
 
-import "./animals-add-form.scss";
+import "./animalsAddForm.scss";
 
 const AnimalsAddForm = ({ data, setReRender }) => {
     const [name, setName] = useState(""),

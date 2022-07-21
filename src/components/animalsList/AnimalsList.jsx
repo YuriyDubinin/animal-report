@@ -1,6 +1,6 @@
-import AnimalsListItem from "../animals-list-item/animals-list-item";
+import AnimalsListItem from "../animalsListItem/AnimalsListItem";
 
-import "./animals-list.scss";
+import "./animalsList.scss";
 
 const AnimalsList = ({ data, onSetModalActive }) => {
     const elements = data.map((item) => {

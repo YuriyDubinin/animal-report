@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 
-import AnimalService from "../../services/animal-service";
-import AppInfo from "../app-info/app-info";
-import SearchPanel from "../search-panel/search-panel";
-import AppFilter from "../app-filter/app-filter";
-import AnimalsList from "../animals-list/animals-list";
-import AnimalsAddForm from "../animals-add-form/animals-add-form";
-import Modal from "../modal/modal";
-import PersonalProfile from "../personal-profile/personal-profile";
-import DailyReport from "../daily-report/daily-report";
+import AnimalService from "../../services/AnimalService";
+import AppInfo from "../appInfo/AppInfo";
+import SearchPanel from "../searchPanel/SearchPanel";
+import AppFilter from "../appFilter/AppFilter";
+import AnimalsList from "../animalsList/AnimalsList";
+import AnimalsAddForm from "../animalsAddForm/AnimalsAddForm";
+import Modal from "../modal/Modal";
+import PersonalProfile from "../personalProfile/PersonalProfile";
+import DailyReport from "../dailyReport/DailyReport";
 
 import "./app.scss";
 

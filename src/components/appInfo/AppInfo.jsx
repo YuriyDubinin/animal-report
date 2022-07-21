@@ -1,4 +1,4 @@
-import "./app-info.scss";
+import "./appInfo.scss";
 
 const AppInfo = ({ data }) => {
     const totalAnimals = data.length,
