@@ -1,8 +1,9 @@
-@import "../../styles/animation.scss";
+@import "../../../styles/animation.scss";
 
 .daily-report {
     height: 630px;
     width: 700px;
+    margin: 0 auto;
     &__title {
         margin: 0;
         font-size: 24px;

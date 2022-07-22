@@ -1,16 +1,12 @@
 import { useState } from "react";
-import WorkActivityGraphic from "../workActivityGraphic/WorkActivityGraphic";
-import FeedingGraphic from "../feedingGraphic/FeedingGraphic";
+import WorkActivityGraphic from "../../workActivityGraphic/WorkActivityGraphic";
+import FeedingGraphic from "../../feedingGraphic/FeedingGraphic";
 
-import defaultProfilePhoto from "../../resources/img/default_profile_photo.jpg";
+import defaultProfilePhoto from "../../../resources/img/default_profile_photo.jpg";
 
-import "./personalProfile.scss";
+import "./personalProfilePage.scss";
 
-const PersonalProfile = (props) => {
-    const [animal, setAnimal] = useState(props.animal);
-
-    const { id, name, kindOfAnimal, inDangerousState, treatment, specialAttention } = animal;
-
+const PersonalProfilePage = () => {
     return (
         <div className="personal-profile">
             <div className="personal-profile__main">
@@ -80,4 +76,4 @@ const PersonalProfile = (props) => {
     );
 };
 
-export default PersonalProfile;
+export default PersonalProfilePage;

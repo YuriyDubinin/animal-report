@@ -1,4 +1,4 @@
-import "./appFilter.scss";
+import "./animalsFilter.scss";
 
 const AppFilter = ({ filterMode, onUpdateFilter }) => {
     const buttonsData = [

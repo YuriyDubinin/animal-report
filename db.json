@@ -1,1 +1,157 @@
-
+{
+    "mainAnimalsList": [
+        {
+            "id": 1,
+            "name": "Сильва",
+            "kindOfAnimal": "Морской лев",
+            "gender": "famale",
+            "treatment": false,
+            "specialAttention": false,
+            "inDangerousState": false
+        },
+        {
+            "id": 2,
+            "name": "Чемодан",
+            "kindOfAnimal": "Белый кит",
+            "gender": "male",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 3,
+            "name": "Гренка",
+            "kindOfAnimal": "Дельфин",
+            "gender": "male",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 4,
+            "name": "Филя",
+            "kindOfAnimal": "Дельфин",
+            "gender": "male",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 5,
+            "name": "Инженерия",
+            "kindOfAnimal": "Белый кит",
+            "gender": "famale",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 6,
+            "name": "Пармезан",
+            "kindOfAnimal": "Морж",
+            "gender": "male",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 7,
+            "name": "Мария",
+            "kindOfAnimal": "Морской лев",
+            "gender": "famale",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 8,
+            "name": "Няша",
+            "kindOfAnimal": "Дельфин",
+            "gender": "famale",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 9,
+            "name": "Мишхаил Сергеевич",
+            "gender": "male",
+            "kindOfAnimal": "Нерпа",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 10,
+            "name": "Мария",
+            "kindOfAnimal": "Нерпа",
+            "gender": "male",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 11,
+            "name": "Бобби",
+            "kindOfAnimal": "Нерпа",
+            "gender": "male",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 12,
+            "name": "Жорик",
+            "kindOfAnimal": "Нерпа",
+            "gender": "male",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 13,
+            "name": "Шредер",
+            "kindOfAnimal": "Нерпа",
+            "gender": "male",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 14,
+            "name": "Кнопка",
+            "kindOfAnimal": "Нерпа",
+            "gender": "famale",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 15,
+            "name": "Умница",
+            "kindOfAnimal": "Нерпа",
+            "gender": "famale",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 16,
+            "name": "Пушок",
+            "kindOfAnimal": "Нерпа",
+            "gender": "male",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        },
+        {
+            "id": 17,
+            "name": "Шрекс",
+            "kindOfAnimal": "Нерпа",
+            "gender": "male",
+            "inDangerousState": false,
+            "treatment": false,
+            "specialAttention": false
+        }
+    ]
+}

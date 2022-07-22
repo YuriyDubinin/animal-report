@@ -1,8 +1,7 @@
-@import "../../styles/animation.scss";
+@import "../../../styles/animation.scss";
 
 .personal-profile {
     &__main {
-        position: relative;
         margin: 0 auto;
         width: 1300px;
         max-height: 600px;
@@ -22,7 +21,7 @@
         position: absolute;
         top: 85%;
         right: 51.5%;
-        display: flex;
+        display: block;
         justify-content: flex-end;
         padding: 15px;
         background-color: rgba(#12515d, 0.6);

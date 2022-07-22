@@ -1,9 +1,9 @@
 import { Formik, Field, Form, ErrorMessage as FormikErrorMessage } from "formik";
 import * as Yup from "yup";
 
-import "./dailyReport.scss";
+import "./dailyReportPage.scss";
 
-const DailyReport = () => {
+const DailyReportPage = () => {
     return (
         <Formik
             initialValues={{
@@ -175,4 +175,4 @@ const DailyReport = () => {
     );
 };
 
-export default DailyReport;
+export default DailyReportPage;
