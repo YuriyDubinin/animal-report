@@ -1,4 +1,6 @@
-# Animal Report
+# Animal Report App
+
+⚠️ Attention! At the moment, the application is under massive refactoring! I am completely re-architecting the application and preparing to include the Redux library.
 
 🐾 An application created using the React library, the main purpose of which is to create an animal control accounting system.
 
