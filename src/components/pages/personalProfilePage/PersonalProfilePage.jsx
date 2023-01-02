@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import { useState } from "react";
-import WorkActivityGraphic from "../../workActivityGraphic/WorkActivityGraphic";
-import FeedingGraphic from "../../feedingGraphic/FeedingGraphic";
+import WorkActivityGraphic from "../../WorkActivityGraphic/WorkActivityGraphic";
+import FeedingGraphic from "../../FeedingGraphic/FeedingGraphic";
 
 import defaultProfilePhoto from "../../../resources/img/default_profile_photo.jpg";
 

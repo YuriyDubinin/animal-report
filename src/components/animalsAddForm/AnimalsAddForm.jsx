@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 import AnimalService from "../../services/AnimalService";
-import Modal from "../modal/Modal";
+import Modal from "../Modal/Modal";
 
 import "./animalsAddForm.scss";
 

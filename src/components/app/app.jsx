@@ -2,7 +2,7 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 
-import Spinner from "../spinner/Spinner";
+import Spinner from "../Spinner/Spinner";
 
 import "./app.scss";
 

@@ -23,9 +23,15 @@ class AnimalService {
         return await result.json();
     };
 
-    //getting mainAnimalsList from db
+    // getting mainAnimalsList from db
     getMainAnimalsList = async () => {
         const result = await this.getData(`${this._apiBase}/mainAnimalsList`);
+
+        return await result;
+    };
+
+    getMainUsersList = async () => {
+        const result = await this.getData(`${this._apiBase}/mainUsersList`);
 
         return await result;
     };

@@ -153,5 +153,11 @@
             "treatment": false,
             "specialAttention": false
         }
+    ],
+    "mainUsersList": [
+        {
+            "login": "yura",
+            "password": "123"
+        }
     ]
 }

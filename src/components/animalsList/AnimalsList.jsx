@@ -1,4 +1,4 @@
-import AnimalsListItem from "../animalsListItem/AnimalsListItem";
+import AnimalsListItem from "../AnimalsListItem/AnimalsListItem";
 
 import "./animalsList.scss";
 
