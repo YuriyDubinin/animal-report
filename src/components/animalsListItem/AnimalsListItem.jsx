@@ -1,4 +1,7 @@
 import { useNavigate } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+
+import { setAnimalId } from './animalSlice';
 
 import './animalsListItem.scss';
 
@@ -10,6 +13,8 @@ const AnimalsListItem = ({
   specialAttention,
   inDangerousState,
 }) => {
+  const dispatch = useDispatch();
+
   const navigate = useNavigate();
 
   // adding a passivity class to indicators depending on a property
@@ -27,7 +32,7 @@ const AnimalsListItem = ({
           title="Профиль"
           data-work-tab="profile"
           onClick={(event) => {
-            console.log(id);
+            dispatch(setAnimalId(id));
             navigate(`/personal-profile-page/:${id}`);
           }}
         >

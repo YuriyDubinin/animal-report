@@ -4,154 +4,188 @@
       "id": 1,
       "name": "Сильва",
       "kindOfAnimal": "Морской лев",
-      "gender": "famale",
+      "gender": "Самка",
       "treatment": false,
       "specialAttention": false,
-      "inDangerousState": false
+      "inDangerousState": false,
+      "age":  5,
+      "weight": 17
     },
     {
       "id": 2,
       "name": "Чемодан",
       "kindOfAnimal": "Белый кит",
-      "gender": "male",
+      "gender": "Самец",
       "inDangerousState": false,
       "treatment": false,
-      "specialAttention": false
+      "specialAttention": false,
+      "age":  13,
+      "weight": 1500
     },
     {
       "id": 3,
       "name": "Гренка",
       "kindOfAnimal": "Дельфин",
-      "gender": "male",
+      "gender": "Самец",
       "inDangerousState": false,
       "treatment": false,
-      "specialAttention": false
+      "specialAttention": false,
+      "age":  7,
+      "weight": 170
     },
     {
       "id": 4,
       "name": "Филя",
       "kindOfAnimal": "Дельфин",
-      "gender": "male",
+      "gender": "Самец",
       "inDangerousState": false,
       "treatment": false,
-      "specialAttention": false
+      "specialAttention": false,
+      "age":  35,
+      "weight": 240
     },
     {
       "id": 5,
       "name": "Инженерия",
       "kindOfAnimal": "Белый кит",
-      "gender": "famale",
+      "gender": "Самка",
       "inDangerousState": false,
       "treatment": false,
-      "specialAttention": false
+      "specialAttention": false,
+      "age":  12,
+      "weight": 950
     },
     {
       "id": 6,
       "name": "Пармезан",
       "kindOfAnimal": "Морж",
-      "gender": "male",
+      "gender": "Самец",
       "inDangerousState": false,
       "treatment": false,
-      "specialAttention": false
+      "specialAttention": false,
+      "age":  15,
+      "weight": 850
     },
     {
       "id": 7,
       "name": "Мария",
       "kindOfAnimal": "Морской лев",
-      "gender": "famale",
+      "gender": "Самка",
       "inDangerousState": false,
       "treatment": false,
-      "specialAttention": false
+      "specialAttention": false,
+      "age":  5,
+      "weight": 21
     },
     {
       "id": 8,
       "name": "Няша",
       "kindOfAnimal": "Дельфин",
-      "gender": "famale",
+      "gender": "Самка",
       "inDangerousState": false,
       "treatment": false,
-      "specialAttention": false
+      "specialAttention": false,
+      "age":  7,
+      "weight": 210
     },
     {
       "id": 9,
       "name": "Мишхаил Сергеевич",
-      "gender": "male",
+      "gender": "Самец",
       "kindOfAnimal": "Нерпа",
       "inDangerousState": false,
       "treatment": false,
-      "specialAttention": false
+      "specialAttention": false,
+      "age":  5,
+      "weight": 35
     },
     {
       "id": 10,
       "name": "Мария",
       "kindOfAnimal": "Нерпа",
-      "gender": "male",
+      "gender": "Самец",
       "inDangerousState": false,
       "treatment": false,
-      "specialAttention": false
+      "specialAttention": false,
+      "age":  2,
+      "weight": 22
     },
     {
       "id": 11,
       "name": "Бобби",
       "kindOfAnimal": "Нерпа",
-      "gender": "male",
+      "gender": "Самец",
       "inDangerousState": false,
       "treatment": false,
-      "specialAttention": false
+      "specialAttention": false,
+      "age":  5,
+      "weight": 19
     },
     {
       "id": 12,
       "name": "Жорик",
       "kindOfAnimal": "Нерпа",
-      "gender": "male",
+      "gender": "Самец",
       "inDangerousState": false,
       "treatment": false,
-      "specialAttention": false
+      "specialAttention": false,
+      "age":  6,
+      "weight": 24
     },
     {
       "id": 13,
       "name": "Шредер",
       "kindOfAnimal": "Нерпа",
-      "gender": "male",
+      "gender": "Самец",
       "inDangerousState": false,
       "treatment": false,
-      "specialAttention": false
+      "specialAttention": false,
+      "age":  10,
+      "weight": 40
     },
     {
       "id": 14,
       "name": "Кнопка",
       "kindOfAnimal": "Нерпа",
-      "gender": "famale",
+      "gender": "Самка",
       "inDangerousState": false,
       "treatment": false,
-      "specialAttention": false
+      "specialAttention": false,
+      "age":  1,
+      "weight": 14
     },
     {
       "id": 15,
       "name": "Умница",
       "kindOfAnimal": "Нерпа",
-      "gender": "famale",
+      "gender": "Самка",
       "inDangerousState": false,
       "treatment": false,
-      "specialAttention": false
+      "specialAttention": false,
+      "age":  2,
+      "weight": 13
     },
     {
       "id": 16,
       "name": "Пушок",
       "kindOfAnimal": "Нерпа",
-      "gender": "male",
+      "gender": "Самец",
       "inDangerousState": false,
       "treatment": false,
-      "specialAttention": false
+      "specialAttention": false,
+      "age":  14,
+      "weight": 30
     },
     {
       "id": 17,
       "name": "Шрекс",
       "kindOfAnimal": "Нерпа",
-      "gender": "male",
+      "gender": "Самец",
       "inDangerousState": false,
       "treatment": false,
-      "specialAttention": false
+      "specialAttention": false,
+      "age":  6,
+      "weight": 27
     }
   ],
   "mainUsersList": [

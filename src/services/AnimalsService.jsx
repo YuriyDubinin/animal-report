@@ -34,7 +34,7 @@ class AnimalsService {
     const result = await this.getData(`${this._apiBase}/mainAnimalsList`);
 
     const animalDataObject = result.find((animal) => animal.id === id);
-    
+
     return await animalDataObject;
   };
 

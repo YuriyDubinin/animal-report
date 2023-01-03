@@ -1,27 +1,43 @@
 import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
+import { selectAnimalId } from '../../AnimalsListItem/animalSlice';
+
 import WorkActivityGraphic from '../../WorkActivityGraphic/WorkActivityGraphic';
 import FeedingGraphic from '../../FeedingGraphic/FeedingGraphic';
-
 import AnimalService from '../../../services/AnimalsService';
 
 import defaultProfilePhoto from '../../../resources/img/default_profile_photo.jpg';
 
 import './personalProfilePage.scss';
 
-const PersonalProfilePage = ({ id }) => {
+const PersonalProfilePage = () => {
   const [animalData, setAnimalData] = useState({});
+
+  const animalId = useSelector(selectAnimalId);
 
   const animalService = new AnimalService();
 
+  const name = animalData?.name ? animalData.name : '*no data';
+  const gender = animalData?.gender ? animalData.gender :'*no data';
+  const inDangerousState = animalData?.inDangerousState ? animalData.inDangerousState : '*no data';
+  const kindOfAnimal = animalData?.kindOfAnimal ? animalData.kindOfAnimal : '*no data';
+  const specialAttention = animalData?.specialAttention ? animalData.specialAttention : '*no data';
+  const treatment = animalData?.treatment ? animalData.treatment : '*no data';
+  const age = animalData?.age ? animalData.age : '*no data';
+  const weight = animalData?.weight ? animalData.weight: '*no data';
+
 
   useEffect(() => {
-    animalService.getAnimalDataById(2)  // must be id
-    .then((res) => {
-      setAnimalData(res);
-    })
-  }, []);
+    animalService
+      .getAnimalDataById(animalId)
+      .then((res) => {
+        setAnimalData(res);
+      });
+  }, [animalId]);
 
+  console.log(animalData)
   return (
     <>
       <Helmet>
@@ -52,11 +68,11 @@ const PersonalProfilePage = ({ id }) => {
                 </div>
               </div>
               <div className="personal-profile__right-info-block">
-                <h3>'Кличка'</h3>
-                <p>Пол: Самец</p>
-                <p>Вид: Байкальская нерпа</p>
-                <p>Возраст: 9 лет</p>
-                <p>Вес: 56 кг</p>
+                <h3>{name}</h3>
+                <p>Пол: {gender}</p>
+                <p>Вид: {kindOfAnimal}</p>
+                <p>Возраст: {age} лет</p>
+                <p>Вес: {weight} кг</p>
               </div>
             </div>
             <div className="personal-profile__ration">
