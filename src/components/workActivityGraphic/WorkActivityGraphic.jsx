@@ -10,6 +10,8 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
+import './workActivityGraphic.scss';
+
 const WorkActivityGraphic = () => {
   ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -55,7 +57,7 @@ const WorkActivityGraphic = () => {
     ],
   };
 
-  return <Line options={options} data={data} style={{ maxHeight: '275px' }} />;
+  return <Line options={options} data={data} style={{ maxHeight: '275px' }} className="work-activity-graphic" />;
 };
 
 export default WorkActivityGraphic;

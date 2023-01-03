@@ -1,15 +1,23 @@
 @import '../../../styles/animation.scss';
+@import '../../../styles/variables.scss';
 
 .personal-profile {
   &__main {
+    position: relative;
     margin: 0 auto;
     width: 1300px;
-    max-height: 600px;
     display: flex;
     justify-content: space-between;
   }
   &__data {
     flex: 1 1 50%;
+  }
+  &__info {
+    padding: 25px;
+    background: $tabBackgroundColor;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px $titleColor;
+    margin-bottom: 30px;
   }
   &__graphics {
     flex: 1 1 50%;
@@ -17,18 +25,24 @@
     flex-direction: column;
     justify-content: space-between;
   }
-  &__main-button-bar {
+  &__main-button-bar-wrap {
+    padding: 25px;
+    background: $tabBackgroundColor;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px $titleColor;
     position: absolute;
-    top: 85%;
-    right: 51.5%;
-    display: block;
+    bottom: 38%;
+    left: 39%;
+    animation: block-appearance 1.2s 0.6s forwards;
+    opacity: 0;
+  }
+  &__main-button-bar {
+    display: flex;
     justify-content: flex-end;
     padding: 15px;
     background-color: rgba(#12515d, 0.6);
     display: flex;
     border-radius: 4px;
-    animation: block-appearance 1.2s 0.6s forwards;
-    opacity: 0;
     button {
       margin: 0 20px 0 0;
       width: 60px;
@@ -67,9 +81,11 @@
     left: -50%;
   }
   &__ration {
-    margin-top: 15px;
-    max-height: 900px;
-
+    
+    background: $tabBackgroundColor;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px $titleColor;
+    padding: 25px;
     animation: block-appearance 1.5s 0s forwards, sliding-on-bottom-side 1s 0s forwards;
     position: relative;
     bottom: -50%;
@@ -100,8 +116,8 @@
   }
   &__ration-total {
     position: absolute;
-    top: 43%;
-    right: 11%;
+    bottom: 25px;
+    right: 25px;
     font-size: 18px;
     padding: 15px 10px;
     background-color: #fff;
@@ -113,7 +129,7 @@
   &__right-info-block {
     flex: 0 1 45%;
     h3 {
-      margin: 0;
+      margin: 0 0 15px 0;
       font-size: 24px;
       text-align: center;
       color: #12515d;
@@ -122,6 +138,24 @@
       margin: 5px 0 0 0;
       font-size: 20px;
     }
+    input {
+      max-width: 40%;
+      margin-bottom: 5px;
+      padding: 0 0 0 5px;
+      height: 36px;
+      border: 0;
+      border-radius: 4px;
+      border: 0;
+      outline: none;
+      font-size: 17px;
+      &:focus {
+        box-shadow: 0px 0px 4px #12515d;
+      }
+    }
+  }
+  &__right-info-block-item {
+    display: flex;
+    justify-content: space-between;
   }
   &__photo {
     max-width: 100%;
@@ -135,7 +169,7 @@
     }
   }
   &__health-bar {
-    margin: 15px 0 0 20px;
+    margin: 15px 0 0 0;
     padding: 15px;
     background-color: rgba(#12515d, 0.6);
     display: inline-block;
@@ -174,19 +208,26 @@
     }
   }
   &__top-graphic {
-    background-color: #fff;
-    padding: 5px;
-    border-radius: 4px;
-    max-height: 300px;
+    margin: 0 0 30px 30px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    background: $tabBackgroundColor;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px $titleColor;
+    height: 100%; 
     animation: block-appearance 1.5s 0s forwards, sliding-on-top-side 1s 0s forwards;
     position: relative;
     left: 0;
     top: -50%;
   }
   &__bot-graphic {
-    background-color: #fff;
-    padding: 5px;
-    border-radius: 4px;
+    margin-left: 30px;
+    max-height: 900px;
+    background: $tabBackgroundColor;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px $titleColor;
+    padding: 25px;
     max-height: 300px;
     animation: block-appearance 1.5s 0s forwards, sliding-on-right-side 1s 0s forwards;
     position: relative;

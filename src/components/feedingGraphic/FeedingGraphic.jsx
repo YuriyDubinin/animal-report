@@ -10,6 +10,8 @@ import {
 } from 'chart.js';
 import { Line } from 'react-chartjs-2';
 
+import './feedingGraphic.scss';
+
 const FeedingGraphic = () => {
   ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
@@ -46,7 +48,7 @@ const FeedingGraphic = () => {
     ],
   };
 
-  return <Line options={options} data={data} style={{ maxHeight: '275px' }} />;
+  return <Line options={options} data={data} style={{ maxHeight: '275px' }} className="feeding-graphic" />;
 };
 
 export default FeedingGraphic;

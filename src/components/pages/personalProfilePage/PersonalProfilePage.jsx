@@ -69,29 +69,42 @@ const PersonalProfilePage = () => {
               </div>
               <div className="personal-profile__right-info-block">
                 <h3>{name}</h3>
-                <p>Пол: {gender}</p>
-                <p>Вид: {kindOfAnimal}</p>
-                <p>Возраст: {age} лет</p>
-                <p>Вес: {weight} кг</p>
+                <div className="personal-profile__right-info-block-item">
+                  <p>Пол:</p>
+                  <input type="string" placeholder={gender} />
+                </div>
+                <div className="personal-profile__right-info-block-item">
+                  <p>Вид:</p>
+                  <input type="string" placeholder={kindOfAnimal} />
+                </div>
+                <div className="personal-profile__right-info-block-item">
+                  <p>Возраст (лет):</p>
+                  <input type="number" placeholder={age} />
+                </div>
+                <div className="personal-profile__right-info-block-item">
+                  <p>Вес (кг):</p>
+                  <input type="string" placeholder={weight} />
+                </div>
               </div>
             </div>
             <div className="personal-profile__ration">
               <h3>Рацион (кг)</h3>
-              <input type="text" placeholder="Название корма" />{' '}
-              <input type="number" placeholder="Вес (кг)" />
-              <input type="text" placeholder="Название корма" />{' '}
-              <input type="number" placeholder="Вес (кг)" />
-              <input type="text" placeholder="Название корма" />{' '}
-              <input type="number" placeholder="Вес (кг)" />
-              <input type="text" placeholder="Название корма" />{' '}
-              <input type="number" placeholder="Вес (кг)" />
-              <input type="text" placeholder="Название корма" />{' '}
-              <input type="number" placeholder="Вес (кг)" />
-              <input type="text" placeholder="Название корма" />{' '}
-              <input type="number" placeholder="Вес (кг)" />
               <div className="personal-profile__ration-total">
                 Итого: <span>14кг</span>
               </div>
+              <input type="text" placeholder="Название корма" />{' '}
+              <input type="number" placeholder="Вес (кг)" />
+              <input type="text" placeholder="Название корма" />{' '}
+              <input type="number" placeholder="Вес (кг)" />
+              <input type="text" placeholder="Название корма" />{' '}
+              <input type="number" placeholder="Вес (кг)" />
+              <input type="text" placeholder="Название корма" />{' '}
+              <input type="number" placeholder="Вес (кг)" />
+              <input type="text" placeholder="Название корма" />{' '}
+              <input type="number" placeholder="Вес (кг)" />
+              <input type="text" placeholder="Название корма" />{' '}
+              <input type="number" placeholder="Вес (кг)" />
+
             </div>
           </div>
           <div className="personal-profile__graphics">
@@ -102,13 +115,15 @@ const PersonalProfilePage = () => {
               <FeedingGraphic />
             </div>
           </div>
-          <div className="personal-profile__main-button-bar">
-            <button title="Удалить животное">
-              <i className="fa-solid fa-trash-can"></i>
-            </button>
-            <button title="Принять изменения">
-              <i className="fa-solid fa-circle-check"></i>
-            </button>
+          <div className="personal-profile__main-button-bar-wrap">
+            <div className="personal-profile__main-button-bar">
+              <button title="Удалить животное">
+                <i className="fa-solid fa-trash-can"></i>
+              </button>
+              <button title="Принять изменения">
+                <i className="fa-solid fa-circle-check"></i>
+              </button>
+            </div>
           </div>
         </div>
       </div>
