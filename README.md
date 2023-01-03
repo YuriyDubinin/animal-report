@@ -1,8 +1,10 @@
 # Animal Report App
 
-⚠️ Attention! At the moment, the application is under massive refactoring! I am completely re-architecting the application and preparing to include the Redux library.
+⚠️ Attention! At the moment, the application is under massive refactoring! I am completely
+re-architecting the application and preparing to include the Redux library.
 
-🐾 An application created using the React library, the main purpose of which is to create an animal control accounting system.
+🐾 An application created using the React library, the main purpose of which is to create an animal
+control accounting system.
 
 ![preview_1](src/resources/img/for_readme/preview_1.jpg)
 
@@ -12,10 +14,10 @@
 
 ## Features/highlights
 
--   the application is written using functional React components
--   added search for animals by the occurrence of a word in the animals name
--   implemented additional filtering of animals
--   added animated interface
+- the application is written using functional React components
+- added search for animals by the occurrence of a word in the animals name
+- implemented additional filtering of animals
+- added animated interface
 
 ## Setup
 

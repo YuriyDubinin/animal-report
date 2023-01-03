@@ -1,25 +1,25 @@
-import { Component } from "react";
-import ErrorMessague from "../ErrorMessageWindow/ErrorMessageWindow";
+import { Component } from 'react';
+import ErrorMessague from '../ErrorMessageWindow/ErrorMessageWindow';
 
 class ErrorBoundary extends Component {
-    state = {
-        error: false,
-    };
+  state = {
+    error: false,
+  };
 
-    componentDidCatch(error, errorInfo) {
-        console.log(error, errorInfo);
-        this.setState({
-            error: true,
-        });
+  componentDidCatch(error, errorInfo) {
+    console.log(error, errorInfo);
+    this.setState({
+      error: true,
+    });
+  }
+
+  render() {
+    if (this.state.error) {
+      return <ErrorMessague />;
     }
 
-    render() {
-        if (this.state.error) {
-            return <ErrorMessague />;
-        }
-
-        return this.props.children;
-    }
+    return this.props.children;
+  }
 }
 
 export default ErrorBoundary;
