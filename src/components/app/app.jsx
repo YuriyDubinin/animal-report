@@ -21,8 +21,8 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Auth />} />
                 <Route path="/main-page" element={<MainPage />} />
-                <Route path="/personal-profile-page" element={<PersonalProfilePage />} />
-                <Route path="/daily-report-page" element={<DailyReportPage />} />
+                <Route path="/personal-profile-page/:animalId" element={<PersonalProfilePage />} />
+                <Route path="/daily-report-page/:annimalId" element={<DailyReportPage />} />
               </Routes>
             </Suspense>
           </main>

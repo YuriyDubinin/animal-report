@@ -1,3 +1,5 @@
+import { useNavigate } from 'react-router-dom';
+
 import './animalsListItem.scss';
 
 const AnimalsListItem = ({
@@ -7,9 +9,10 @@ const AnimalsListItem = ({
   treatment,
   specialAttention,
   inDangerousState,
-  onSetModalActive,
 }) => {
-  //Adding a passivity class to indicators depending on a property
+  const navigate = useNavigate();
+
+  // adding a passivity class to indicators depending on a property
   const styleDistributor = (property) => {
     const className = property ? null : 'passive-health-indicator';
     return className;
@@ -25,7 +28,7 @@ const AnimalsListItem = ({
           data-work-tab="profile"
           onClick={(event) => {
             console.log(id);
-            onSetModalActive(true, event.currentTarget.getAttribute('data-work-tab'));
+            navigate(`/personal-profile-page/:${id}`);
           }}
         >
           <i className="fa-solid fa-id-card-clip"></i>
@@ -36,7 +39,7 @@ const AnimalsListItem = ({
           title="Отчёт"
           data-work-tab="report"
           onClick={(event) => {
-            onSetModalActive(true, event.currentTarget.getAttribute('data-work-tab'));
+            navigate(`/daily-report-page/:${id}`);
           }}
         >
           <i className="fa-solid fa-book"></i>

@@ -1,13 +1,27 @@
 import { Helmet } from 'react-helmet-async';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import WorkActivityGraphic from '../../WorkActivityGraphic/WorkActivityGraphic';
 import FeedingGraphic from '../../FeedingGraphic/FeedingGraphic';
+
+import AnimalService from '../../../services/AnimalsService';
 
 import defaultProfilePhoto from '../../../resources/img/default_profile_photo.jpg';
 
 import './personalProfilePage.scss';
 
-const PersonalProfilePage = () => {
+const PersonalProfilePage = ({ id }) => {
+  const [animalData, setAnimalData] = useState({});
+
+  const animalService = new AnimalService();
+
+
+  useEffect(() => {
+    animalService.getAnimalDataById(2)  // must be id
+    .then((res) => {
+      setAnimalData(res);
+    })
+  }, []);
+
   return (
     <>
       <Helmet>

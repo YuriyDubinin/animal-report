@@ -30,6 +30,14 @@ class AnimalsService {
     return await result;
   };
 
+  getAnimalDataById = async (id) => {
+    const result = await this.getData(`${this._apiBase}/mainAnimalsList`);
+
+    const animalDataObject = result.find((animal) => animal.id === id);
+    
+    return await animalDataObject;
+  };
+
   getFilteredList = async (filterMode) => {
     const result = await this.getData(`${this._apiBase}/mainAnimalsList`);
 
