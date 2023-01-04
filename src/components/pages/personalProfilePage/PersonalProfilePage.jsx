@@ -20,24 +20,21 @@ const PersonalProfilePage = () => {
   const animalService = new AnimalService();
 
   const name = animalData?.name ? animalData.name : '*no data';
-  const gender = animalData?.gender ? animalData.gender :'*no data';
+  const gender = animalData?.gender ? animalData.gender : '*no data';
   const inDangerousState = animalData?.inDangerousState ? animalData.inDangerousState : '*no data';
   const kindOfAnimal = animalData?.kindOfAnimal ? animalData.kindOfAnimal : '*no data';
   const specialAttention = animalData?.specialAttention ? animalData.specialAttention : '*no data';
   const treatment = animalData?.treatment ? animalData.treatment : '*no data';
   const age = animalData?.age ? animalData.age : '*no data';
-  const weight = animalData?.weight ? animalData.weight: '*no data';
-
+  const weight = animalData?.weight ? animalData.weight : '*no data';
 
   useEffect(() => {
-    animalService
-      .getAnimalDataById(animalId)
-      .then((res) => {
-        setAnimalData(res);
-      });
+    animalService.getAnimalDataById(animalId).then((res) => {
+      setAnimalData(res);
+    });
   }, [animalId]);
 
-  console.log(animalData)
+  console.log(animalData);
   return (
     <>
       <Helmet>
@@ -104,7 +101,6 @@ const PersonalProfilePage = () => {
               <input type="number" placeholder="Вес (кг)" />
               <input type="text" placeholder="Название корма" />{' '}
               <input type="number" placeholder="Вес (кг)" />
-
             </div>
           </div>
           <div className="personal-profile__graphics">

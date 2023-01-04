@@ -48,7 +48,14 @@ const FeedingGraphic = () => {
     ],
   };
 
-  return <Line options={options} data={data} style={{ maxHeight: '275px' }} className="feeding-graphic" />;
+  return (
+    <Line
+      options={options}
+      data={data}
+      style={{ maxHeight: '275px' }}
+      className="feeding-graphic"
+    />
+  );
 };
 
 export default FeedingGraphic;

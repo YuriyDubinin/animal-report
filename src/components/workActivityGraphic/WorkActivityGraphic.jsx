@@ -57,7 +57,14 @@ const WorkActivityGraphic = () => {
     ],
   };
 
-  return <Line options={options} data={data} style={{ maxHeight: '275px' }} className="work-activity-graphic" />;
+  return (
+    <Line
+      options={options}
+      data={data}
+      style={{ maxHeight: '275px' }}
+      className="work-activity-graphic"
+    />
+  );
 };
 
 export default WorkActivityGraphic;

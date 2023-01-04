@@ -34,17 +34,6 @@ const Auth = () => {
     });
   };
 
-  //create modal window with message
-  const createModalWindow = () => {
-    return (
-      <div className="auth__modal-message">
-        {modalMessage}
-
-        <i className="fa-solid fa-circle-check" onClick={() => setModalActive(false)}></i>
-      </div>
-    );
-  };
-
   return (
     <>
       <Formik
@@ -81,7 +70,7 @@ const Auth = () => {
           </button>
         </Form>
       </Formik>
-      {modalActive && <Modal onSetModalActive={setModalActive}>{createModalWindow()}</Modal>}
+      {modalActive && <Modal showModal={setModalActive} modalMessage={modalMessage}></Modal>}
     </>
   );
 };

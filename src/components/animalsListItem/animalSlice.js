@@ -1,18 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    animalId: 0,
-    data: {}
-}
+  animalId: 0,
+  data: {},
+};
 
 export const animalSlice = createSlice({
-    name: 'animal',
-    initialState,
-    reducers: {
-        setAnimalId: (state, action) => {
-            state.animalId = action.payload;
-        }
-    }
+  name: 'animal',
+  initialState,
+  reducers: {
+    setAnimalId: (state, action) => {
+      state.animalId = action.payload;
+    },
+  },
 });
 
 export const { setAnimalId } = animalSlice.actions;

@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 
 import './modal.scss';
 
-//Modal, must accept props.onSetModalActive as a prop, and the component calling the modal window must have a modalActive state & a setModalActive method that changes this state
-const Modal = (props) => {
+// Modal, must accept showModal as a prop, and the component calling the modal window must have a modalActive state & a setModalActive method that changes this state
+const Modal = ({ type = 'message', showModal, modalMessage, children }) => {
   const [modalActive, setModalActive] = useState(true);
 
   useEffect(() => {
@@ -17,7 +17,7 @@ const Modal = (props) => {
   //sets vale of state "modalActive" itself, and the component that called it
   const onSetModalActive = (bool) => {
     setModalActive(bool);
-    props.onSetModalActive(bool);
+    showModal(bool);
   };
 
   //closing modal window when user press "Esc"
@@ -25,6 +25,17 @@ const Modal = (props) => {
     if (event.key === 'Escape') {
       onSetModalActive(false);
     }
+  };
+
+  //create modal window with message
+  const createMessageModalWindow = (modalMessage) => {
+    return (
+      <div className="auth__modal-message">
+        {modalMessage}
+
+        <i className="fa-solid fa-circle-check" onClick={() => onSetModalActive(false)}></i>
+      </div>
+    );
   };
 
   return (
@@ -40,7 +51,8 @@ const Modal = (props) => {
           event.stopPropagation();
         }}
       >
-        {props.children}
+        {type === 'message' && createMessageModalWindow(modalMessage)}
+        {type === 'content' && { children }}
         <div className="modal__close-btn">
           <button
             title="Закрыть"

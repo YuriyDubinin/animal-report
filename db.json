@@ -8,7 +8,7 @@
       "treatment": false,
       "specialAttention": false,
       "inDangerousState": false,
-      "age":  5,
+      "age": 5,
       "weight": 17
     },
     {
@@ -19,7 +19,7 @@
       "inDangerousState": false,
       "treatment": false,
       "specialAttention": false,
-      "age":  13,
+      "age": 13,
       "weight": 1500
     },
     {
@@ -30,7 +30,7 @@
       "inDangerousState": false,
       "treatment": false,
       "specialAttention": false,
-      "age":  7,
+      "age": 7,
       "weight": 170
     },
     {
@@ -41,7 +41,7 @@
       "inDangerousState": false,
       "treatment": false,
       "specialAttention": false,
-      "age":  35,
+      "age": 35,
       "weight": 240
     },
     {
@@ -52,7 +52,7 @@
       "inDangerousState": false,
       "treatment": false,
       "specialAttention": false,
-      "age":  12,
+      "age": 12,
       "weight": 950
     },
     {
@@ -63,7 +63,7 @@
       "inDangerousState": false,
       "treatment": false,
       "specialAttention": false,
-      "age":  15,
+      "age": 15,
       "weight": 850
     },
     {
@@ -74,7 +74,7 @@
       "inDangerousState": false,
       "treatment": false,
       "specialAttention": false,
-      "age":  5,
+      "age": 5,
       "weight": 21
     },
     {
@@ -85,7 +85,7 @@
       "inDangerousState": false,
       "treatment": false,
       "specialAttention": false,
-      "age":  7,
+      "age": 7,
       "weight": 210
     },
     {
@@ -96,7 +96,7 @@
       "inDangerousState": false,
       "treatment": false,
       "specialAttention": false,
-      "age":  5,
+      "age": 5,
       "weight": 35
     },
     {
@@ -107,7 +107,7 @@
       "inDangerousState": false,
       "treatment": false,
       "specialAttention": false,
-      "age":  2,
+      "age": 2,
       "weight": 22
     },
     {
@@ -118,7 +118,7 @@
       "inDangerousState": false,
       "treatment": false,
       "specialAttention": false,
-      "age":  5,
+      "age": 5,
       "weight": 19
     },
     {
@@ -129,7 +129,7 @@
       "inDangerousState": false,
       "treatment": false,
       "specialAttention": false,
-      "age":  6,
+      "age": 6,
       "weight": 24
     },
     {
@@ -140,7 +140,7 @@
       "inDangerousState": false,
       "treatment": false,
       "specialAttention": false,
-      "age":  10,
+      "age": 10,
       "weight": 40
     },
     {
@@ -151,7 +151,7 @@
       "inDangerousState": false,
       "treatment": false,
       "specialAttention": false,
-      "age":  1,
+      "age": 1,
       "weight": 14
     },
     {
@@ -162,7 +162,7 @@
       "inDangerousState": false,
       "treatment": false,
       "specialAttention": false,
-      "age":  2,
+      "age": 2,
       "weight": 13
     },
     {
@@ -173,7 +173,7 @@
       "inDangerousState": false,
       "treatment": false,
       "specialAttention": false,
-      "age":  14,
+      "age": 14,
       "weight": 30
     },
     {
@@ -184,7 +184,7 @@
       "inDangerousState": false,
       "treatment": false,
       "specialAttention": false,
-      "age":  6,
+      "age": 6,
       "weight": 27
     }
   ],
