@@ -1,0 +1,46 @@
+@import '../../../styles/animation.scss';
+@import '../../../styles/variables.scss';
+
+.animal-profile {
+  &__main {
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  &__item {
+    flex: 1 1 45%;
+    padding: 25px;
+    background: $tabBackgroundColor;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px $titleColor;
+
+    &:nth-child(1) {
+      margin-bottom: 30px;
+      animation: block-appearance 1.5s 0s forwards, sliding-on-left-side ease-out 0.4s 0s forwards;
+      position: relative;
+      top: 0;
+      left: -50%;
+    }
+    &:nth-child(2) {
+      margin: 0 0 30px 30px;
+      animation: block-appearance 1.5s 0s forwards, sliding-on-right-side ease-out 0.5s 0.1s forwards;
+      position: relative;
+      top: 0;
+      right: -50%;
+    }
+    &:nth-child(3) {
+      margin-bottom: 30px;
+      animation: block-appearance 1.5s 0s forwards, sliding-on-left-side ease-out 0.6s 0.2s forwards;
+      position: relative;
+      top: 0;
+      left: -70%;
+    }
+    &:nth-child(4) {
+      margin: 0 0 30px 30px;
+      animation: block-appearance 1.5s 0s forwards, sliding-on-right-side ease-out 0.7s 0.3s forwards;
+      position: relative;
+      top: 0;
+      right: -70%;
+    }
+  }
+}

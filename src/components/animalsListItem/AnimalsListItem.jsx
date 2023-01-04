@@ -1,7 +1,7 @@
 import { useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 
-import { setAnimalId } from './animalSlice';
+import { setAnimalId } from '../../slices/animalSlice';
 
 import './animalsListItem.scss';
 
@@ -33,7 +33,7 @@ const AnimalsListItem = ({
           data-work-tab="profile"
           onClick={(event) => {
             dispatch(setAnimalId(id));
-            navigate(`/personal-profile-page/:${id}`);
+            navigate(`/animal-profile-page/:${id}`);
           }}
         >
           <i className="fa-solid fa-id-card-clip"></i>

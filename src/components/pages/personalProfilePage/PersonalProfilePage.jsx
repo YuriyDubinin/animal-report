@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet-async';
 import { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 
-import { selectAnimalId } from '../../AnimalsListItem/animalSlice';
+import { selectAnimalId } from '../../../slices/animalSlice';
 
 import WorkActivityGraphic from '../../WorkActivityGraphic/WorkActivityGraphic';
 import FeedingGraphic from '../../FeedingGraphic/FeedingGraphic';
