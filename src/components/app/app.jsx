@@ -7,7 +7,6 @@ import Spinner from '../Spinner/Spinner';
 import './app.scss';
 
 const MainPage = lazy(() => import('../pages/MainPage/MainPage'));
-const PersonalProfilePage = lazy(() => import('../pages/personalProfilePage/PersonalProfilePage'));
 const AnimalProfilePage = lazy(() => import('../pages/AnimalProfile/AnimalProfile'));
 const DailyReportPage = lazy(() => import('../pages/DailyReportPage/DailyReportPage'));
 const Auth = lazy(() => import('../Auth/Auth'));
@@ -22,7 +21,6 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Auth />} />
                 <Route path="/main-page" element={<MainPage />} />
-                <Route path="/personal-profile-page/:animalId" element={<PersonalProfilePage />} />
                 <Route path="/animal-profile-page/:animalId" element={<AnimalProfilePage />} />
                 <Route path="/daily-report-page/:annimalId" element={<DailyReportPage />} />
               </Routes>

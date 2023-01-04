@@ -1,7 +1,10 @@
-@import '../../../styles/animation.scss';
 @import '../../../styles/variables.scss';
+@import '../../../styles/animation.scss';
 
 .animal-profile {
+  height: 93vh;
+  display: flex;
+  align-items: center;
   &__main {
     margin: 0 auto;
     display: flex;
@@ -10,7 +13,7 @@
   &__item {
     flex: 1 1 45%;
     padding: 25px;
-    background: $tabBackgroundColor;
+    background: $firstColor;
     border-radius: 25px;
     box-shadow: 0px 0px 15px $titleColor;
 
@@ -23,7 +26,8 @@
     }
     &:nth-child(2) {
       margin: 0 0 30px 30px;
-      animation: block-appearance 1.5s 0s forwards, sliding-on-right-side ease-out 0.5s 0.1s forwards;
+      animation: block-appearance 1.5s 0s forwards,
+        sliding-on-right-side ease-out 0.5s 0.1s forwards;
       position: relative;
       top: 0;
       right: -50%;
@@ -37,7 +41,8 @@
     }
     &:nth-child(4) {
       margin: 0 0 30px 30px;
-      animation: block-appearance 1.5s 0s forwards, sliding-on-right-side ease-out 0.7s 0.3s forwards;
+      animation: block-appearance 1.5s 0s forwards,
+        sliding-on-right-side ease-out 0.7s 0.3s forwards;
       position: relative;
       top: 0;
       right: -70%;
