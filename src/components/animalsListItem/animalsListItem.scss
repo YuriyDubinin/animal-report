@@ -9,7 +9,6 @@
   background-color: white;
   border-radius: 4px;
   width: 50vw;
-
   span {
     padding: 0 10px;
     line-height: 35px;
@@ -25,7 +24,6 @@
     border-radius: 4px;
     cursor: pointer;
     background-color: rgba(#fffbbf, 0.344);
-
     i {
       transition: 0.3s all;
       color: rgba(#0d6577, 0.644);
@@ -39,12 +37,17 @@
       }
     }
   }
+  &:first-child {
+    border-radius: 25px 25px 0 0;
+  }
+  &:last-child {
+    border-radius: 0 0 25px 25px;
+  }
   &__health-indicators {
     display: flex;
     justify-content: space-between;
     align-items: center;
     list-style-type: none;
-
     li {
       padding: 5px;
       width: 50px;

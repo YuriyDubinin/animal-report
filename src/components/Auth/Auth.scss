@@ -8,7 +8,7 @@
   background-color: $firstColor;
   box-shadow: 0px 0px 15px $titleColor;
   border-radius: 25px;
-  animation: block-appearance 1s 0s forwards;
+  animation: block-appearance 0.6s 0s forwards;
   padding: 25px;
   &__title {
     font-size: 24px;
@@ -43,7 +43,7 @@
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0);
     opacity: 0;
-    animation: block-appearance 1s 0.8s forwards;
+    animation: block-appearance 0.6s 0.8s forwards;
     i {
       padding: 3px;
       transform: scale(2.6);
@@ -65,7 +65,6 @@
     background-color: white;
     font-size: 18px;
     border-radius: 4px;
-    animation: block-appearance duration timing-function delay iteration-count direction fill-mode;
     i {
       padding: 3px;
       transform: scale(1.9);

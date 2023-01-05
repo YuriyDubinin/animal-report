@@ -1,0 +1,51 @@
+@import '../../styles/variables.scss';
+@import '../../styles/animation.scss';
+
+.animals-info {
+  max-width: 360px;
+  position: absolute;
+  top: 144px;
+  right: 30px;
+  &__list {
+    opacity: 0;
+    animation: block-appearance 0.6s 0.5s forwards, sliding-on-right-side ease-out 0.4s 0.5s forwards;
+    right: -50%;
+    top: 0;
+    list-style-type: none;
+    background: $firstColor;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px $titleColor;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0px 0px 15px $titleColor;
+    color: $titleColor;
+    li {
+      font-size: 22px;
+      font-weight: 500;
+      h2 {
+        font-size: 24px;
+        margin: 10px 0;
+        background: #FFF; 
+        padding: 10px;
+        border-radius: 25px 25px 0 0;
+        text-align: center;
+      }
+      &:nth-child(3) {
+        span {
+          color: rgb(96, 224, 96);
+        }
+      }
+      &:nth-child(4) {
+        span {
+          color: rgb(250, 173, 39);
+        }
+      }
+      &:nth-child(5) {
+        margin: 0 0 10px 0;
+        span {
+          color: rgb(211, 0, 0);
+        }
+      }
+    }
+  }
+}

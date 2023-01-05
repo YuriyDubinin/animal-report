@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 import AnimalsService from '../../../services/AnimalsService';
+import AnimalsInfo from '../../AnimalsInfo/AnimalsInfo';
 import AnimalsList from '../../AnimalsList/AnimalsList';
 import AnimalsFilter from '../../AnimalsFilter/AnimalsFilter';
 
@@ -24,7 +25,7 @@ const MainPage = () => {
   };
 
   return (
-    <div className="main-page">
+    <>
       <Helmet>
         <meta
           name="description"
@@ -32,9 +33,12 @@ const MainPage = () => {
         />
         <title>Animal Report App</title>
       </Helmet>
-      <AnimalsFilter filterMode={filterMode} onUpdateFilter={onUpdateFilter} />
-      <AnimalsList data={animalsList} />
-    </div>
+      <div className="main-page">
+        <AnimalsInfo data={animalsList} />
+        <AnimalsFilter filterMode={filterMode} onUpdateFilter={onUpdateFilter} />
+        <AnimalsList data={animalsList} />
+      </div>
+    </>
   );
 };
 

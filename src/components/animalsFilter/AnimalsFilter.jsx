@@ -31,7 +31,14 @@ const AppFilter = ({ filterMode, onUpdateFilter }) => {
     );
   });
 
-  return <div className="btn-group">{buttons}</div>;
+  return (
+    
+    <div className="btn-group">
+      <div className="btn-group__wrap">
+        {buttons}
+      </div>
+    </div>
+  )
 };
 
 export default AppFilter;
