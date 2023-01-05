@@ -1,20 +1,32 @@
+@import '../../../styles/variables.scss';
 @import '../../../styles/animation.scss';
 
 .daily-report {
-  height: 630px;
   width: 700px;
+  min-height: 800px;
   margin: 0 auto;
+  background: $firstColor;
+  padding: 25px;
+  border-radius: 25px;
+  box-shadow: 0px 0px 15px $titleColor;
+  animation: block-appearance 0.6s 0s forwards, sliding-on-left-side ease-out 0.4s 0s forwards;
+  position: relative;
+  top: 0;
+  left: -50%;
   &__title {
-    margin: 0;
+    margin: 0 0 15px 0;
     font-size: 24px;
     text-align: center;
-    color: #12515d;
+    color: $titleColor;
   }
   &__body {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 25px;
+    border-radius: 25px;
+    background: $secondColor;
   }
   &__item {
     margin-top: 15px;
@@ -30,13 +42,14 @@
     margin: 0 0 10px 0;
     font-size: 20px;
     text-align: center;
-    color: #12515d;
+    color: $titleColor;
   }
   &__label {
     margin: 0;
     flex: 0 0 50%;
     display: block;
     font-size: 18px;
+    font-weight: 600;
     p {
       margin: 4px 0;
     }
@@ -52,7 +65,7 @@
     outline: none;
     font-size: 17px;
     &:focus {
-      box-shadow: 0px 0px 4px #12515d;
+      box-shadow: 0px 0px 4px $titleColor;
     }
   }
   &__textarea {
@@ -66,13 +79,13 @@
     font-size: 20px;
     resize: none;
     &:focus {
-      box-shadow: 0px 0px 4px #12515d;
+      box-shadow: 0px 0px 4px $titleColor;
     }
   }
   &__submit-button {
     position: absolute;
-    left: 55%;
-    bottom: 2%;
+    bottom: 131px;
+    right: 72px;
     border: 0;
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0);
@@ -85,7 +98,7 @@
       bottom: 12px;
       left: 48%;
       cursor: pointer;
-      color: #12515d;
+      color: $titleColor;
       transition: 0.3s all;
       &:hover {
         transform: scale(3);
