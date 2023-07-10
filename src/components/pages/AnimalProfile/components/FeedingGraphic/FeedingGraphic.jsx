@@ -1,3 +1,6 @@
+import React from 'react';
+
+
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,7 +11,7 @@ import {
   Tooltip,
   Legend,
 } from 'chart.js';
-import { Line } from 'react-chartjs-2';
+import {Line} from 'react-chartjs-2';
 
 import './feedingGraphic.scss';
 
@@ -49,12 +52,7 @@ const FeedingGraphic = () => {
   };
 
   return (
-    <Line
-      options={options}
-      data={data}
-      style={{ maxHeight: '275px' }}
-      className="feeding-graphic"
-    />
+    <Line options={options} data={data} style={{maxHeight: '275px'}} className="feeding-graphic" />
   );
 };
 

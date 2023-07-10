@@ -1,8 +1,9 @@
-import { Helmet } from 'react-helmet-async';
-import { useState, useEffect } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import {Helmet} from 'react-helmet-async';
+import {useState, useEffect} from 'react';
+import {useSelector} from 'react-redux';
 
-import { selectAnimalId } from '../../../slices/animalSlice';
+import {selectAnimalId} from '../../../slices/animalSlice';
 import AnimalsService from '../../../services/AnimalsService';
 import AnimalProfileInfo from './components/AnimalProfileInfo/AnimalProfileInfo';
 import AnimalProfileRation from './components/AnimalProfileRation/AnimalProfileRation';

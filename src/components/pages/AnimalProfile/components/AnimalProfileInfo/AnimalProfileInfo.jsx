@@ -1,3 +1,4 @@
+import React from 'react';
 import defaultProfilePhoto from '../../../../../resources/img/default_profile_photo.jpg?jsx';
 
 import './animalProfileInfo.scss';

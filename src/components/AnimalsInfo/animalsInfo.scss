@@ -8,7 +8,8 @@
   right: 30px;
   &__list {
     opacity: 0;
-    animation: block-appearance 0.6s 0.5s forwards, sliding-on-right-side ease-out 0.4s 0.5s forwards;
+    animation: block-appearance 0.6s 0.5s forwards,
+      sliding-on-right-side ease-out 0.4s 0.5s forwards;
     right: -50%;
     top: 0;
     list-style-type: none;
@@ -25,7 +26,7 @@
       h2 {
         font-size: 24px;
         margin: 10px 0;
-        background: #FFF; 
+        background: #fff;
         padding: 10px;
         border-radius: 25px 25px 0 0;
         text-align: center;

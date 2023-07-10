@@ -1,6 +1,8 @@
+import React from 'react';
+
 import './animalProfileRationItem.scss';
 
-const AnimalProfileRationItem = ({ item }) => {
+const AnimalProfileRationItem = ({item}) => {
   return (
     <div className="animal-profile-ration-item">
       <div className="animal-profile-ration-item__item">{item.name}</div>

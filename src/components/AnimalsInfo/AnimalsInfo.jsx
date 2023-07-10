@@ -1,6 +1,8 @@
+import React from 'react';
+
 import './animalsInfo.scss';
 
-const AnimalsInfo = ({ data }) => {
+const AnimalsInfo = ({data}) => {
   const totalAnimals = data?.length,
     underSpecialAttention = data.filter((item) => item?.specialAttention).length,
     onTreatment = data.filter((item) => item?.treatment).length,

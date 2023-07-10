@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import {createSlice} from '@reduxjs/toolkit';
 
 const initialState = {
   animalId: 1,
@@ -15,7 +15,7 @@ export const animalSlice = createSlice({
   },
 });
 
-export const { setAnimalId } = animalSlice.actions;
+export const {setAnimalId} = animalSlice.actions;
 
 export const selectAnimalId = (state) => state.animal.animalId;
 

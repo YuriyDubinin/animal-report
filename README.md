@@ -25,6 +25,7 @@ control accounting system.
 $ git clone https://github.com/YuriyDubinin/animal-report.git
 $ cd animal-report
 $ npm i
+$ npm run api
 $ npm start
 ```
 
