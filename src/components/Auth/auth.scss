@@ -1,0 +1,91 @@
+@import '../../styles/variables.scss';
+@import '../../styles/animation.scss';
+
+.auth {
+  position: relative;
+  top: 35vh;
+  width: 20vw;
+  background-color: $firstColor;
+  box-shadow: 0px 0px 15px $titleColor;
+  border-radius: 25px;
+  animation: block-appearance 0.6s 0s forwards;
+  padding: 25px;
+  &__title {
+    font-size: 24px;
+    color: $titleColor;
+    margin: 0 0 10px 0;
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+  }
+  &__item {
+    display: flex;
+  }
+  &__input {
+    margin: 0 10px 5px 0;
+    width: 45%;
+    padding: 0 0 0 5px;
+    height: 30px;
+    border: 0;
+    border-radius: 4px;
+    outline: none;
+    font-size: 17px;
+    &:focus {
+      box-shadow: 0px 0px 4px #12515d;
+    }
+  }
+  &__submit-button {
+    position: absolute;
+    right: 9%;
+    bottom: 7%;
+    border: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0);
+    opacity: 0;
+    animation: block-appearance 0.6s 0.8s forwards;
+    i {
+      padding: 3px;
+      transform: scale(2.6);
+      position: absolute;
+      bottom: 12px;
+      left: 48%;
+      cursor: pointer;
+      color: #12515d;
+      transition: 0.3s all;
+      &:hover {
+        transform: scale(3);
+      }
+    }
+  }
+  &__modal-message {
+    position: relative;
+    padding: 25px 45px 45px 45px;
+    color: black;
+    background-color: white;
+    font-size: 18px;
+    border-radius: 4px;
+    i {
+      padding: 3px;
+      transform: scale(1.9);
+      position: absolute;
+      bottom: 12px;
+      left: 48%;
+      cursor: pointer;
+      color: #12515d;
+      transition: 0.3s all;
+      &:hover {
+        transform: scale(2.2);
+      }
+    }
+  }
+}
+
+.formik-error-message {
+  align-self: flex-start;
+  color: red;
+  font-size: 20px;
+  font-weight: 700;
+  animation: block-appearance 0.4s forwards;
+  opacity: 0;
+}
